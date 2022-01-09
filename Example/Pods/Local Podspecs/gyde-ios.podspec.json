@@ -1,0 +1,22 @@
+{
+  "name": "gyde-ios",
+  "version": "0.1.0",
+  "summary": "A short description of gyde-ios.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/gydeai/gyde-for-ios.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "rushikeshkulkarni": "rushkulky91@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/gydeai/gyde-for-ios.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "gyde-ios/Classes/**/*"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - gyde-ios (0.1.0)
+
+DEPENDENCIES:
+  - gyde-ios (from `../`)
+
+EXTERNAL SOURCES:
+  gyde-ios:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  gyde-ios: 2b2fb7319eee696f6b0d0f7e632f3f2f9652fcba
+
+PODFILE CHECKSUM: 9e69eb05ae3900b36aaf9b381ea3a0f3834e9dac
+
+COCOAPODS: 1.11.2

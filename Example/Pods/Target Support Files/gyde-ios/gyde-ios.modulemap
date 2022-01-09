@@ -1,0 +1,6 @@
+framework module gyde_ios {
+  umbrella header "gyde-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
