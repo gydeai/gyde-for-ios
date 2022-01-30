@@ -16,7 +16,20 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "14.0"
   },
-  "source_files": "gyde-ios/Classes/**/*"
+  "source_files": "gyde-ios/Classes/**/*",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "5.3"
+  },
+  "resource_bundles": {
+    "gyde-ios": [
+      "HVCamera/Swift/Assets/**/*"
+    ]
+  },
+  "dependencies": {
+    "SnapKit": [
+
+    ]
+  }
 }
