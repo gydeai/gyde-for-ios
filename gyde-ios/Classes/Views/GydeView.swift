@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol GydeProtocol {
+    func showWalkthrough()
+    func showWebView(helpArticles: HelpArticles)
+}
+
 public class GydeView: UIView {
     
     var contentList: ContentList! {
@@ -18,6 +23,8 @@ public class GydeView: UIView {
         }
     }
     
+    var delegate: GydeProtocol?
+    
     let headerView = UIView()
     let headerTitleLabel = UILabel()
     let headerSubtitleLabel = UILabel()
@@ -26,6 +33,8 @@ public class GydeView: UIView {
     let searchHeaderView = UIView()
     let searchTextField = TextFieldWithPadding()
     let tableView = UITableView()
+    let languageSelectorButton = UIButton()
+    let languageSelectorView = GydeLanguageSelectorView()
     
     var filteredWalkthroughs = [Walkthrough]()
     var filteredHelpArticles = [HelpArticles]()
@@ -58,6 +67,10 @@ public class GydeView: UIView {
         segmentedControl.insertSegment(withTitle: list.walkthroughTabText, at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: list.helpArticlesTabText, at: 1, animated: false)
         segmentedControl.selectedSegmentIndex = 0
+        languageSelectorView.contentList = list
+        
+        AppData.sharedInstance.headerColor = headerView.backgroundColor
+        AppData.sharedInstance.headerTextColor = headerTitleLabel.textColor
         
         filteredWalkthroughs = contentList.currentLanguageWalkthroughs()
         filteredHelpArticles = contentList.currentHelpArticles()
@@ -135,10 +148,49 @@ public class GydeView: UIView {
             make.top.equalTo(searchHeaderView.snp.bottom).offset(10)
         }
         
+        languageSelectorButton.dropShadow()
+        languageSelectorButton.alpha = 0
+        languageSelectorButton.backgroundColor = .white
+        languageSelectorButton.layer.cornerRadius = 4
+        languageSelectorButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        languageSelectorButton.setTitleColor(.black, for: .normal)
+        languageSelectorButton.setTitle("Select Language", for: .normal)
+        languageSelectorButton.addTarget(self, action: #selector(languageSelection), for: .touchUpInside)
+        self.addSubview(languageSelectorButton)
+        languageSelectorButton.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(-5)
+            make.width.equalTo(180)
+            make.height.equalTo(50)
+            make.top.equalTo(headerView.snp.bottom).offset(-10)
+        }
+        
+        languageSelectorView.alpha = 0
+        self.addSubview(languageSelectorView)
+        languageSelectorView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalTo(self)
+        }
+        
+        languageSelectorView.dismissBlock = { [unowned self] in
+            self.filteredWalkthroughs = contentList.currentLanguageWalkthroughs()
+            self.filteredHelpArticles = contentList.currentHelpArticles()
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 0.33) {
+                self.languageSelectorView.alpha = 0
+            }
+        }
+        
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     // MARK: Actions
+    
+    @objc func languageSelection() {
+        self.languageSelectorButton.isSelected = false
+        UIView.animate(withDuration: 0.33) {
+            self.languageSelectorButton.alpha = 0
+            self.languageSelectorView.alpha = 1
+        }
+    }
     
     @objc func segmentChanged() {
         self.searchTextField.resignFirstResponder()
@@ -149,7 +201,10 @@ public class GydeView: UIView {
     }
     
     @objc func headerButtonAction() {
-        
+        self.languageSelectorButton.isSelected = !self.languageSelectorButton.isSelected
+        UIView.animate(withDuration: 0.33) {
+            self.languageSelectorButton.alpha = self.languageSelectorButton.isSelected ? 1 : 0
+        }
     }
     
     @objc func textFieldDidChange(textField: UITextField) {
@@ -158,7 +213,12 @@ public class GydeView: UIView {
             return
         }
         
-        self.filteredWalkthroughs = text.count >= 2 ? self.contentList.currentLanguageWalkthroughs().filter { $0.flowName.lowercased().contains(text) } : contentList.currentLanguageWalkthroughs()
+        if segmentedControl.selectedSegmentIndex == 0 {
+            self.filteredWalkthroughs = text.count >= 2 ? self.contentList.currentLanguageWalkthroughs().filter { $0.flowName.lowercased().contains(text) } : contentList.currentLanguageWalkthroughs()
+        } else {
+            self.filteredHelpArticles = text.count >= 2 ? self.contentList.currentHelpArticles().filter { $0.question.lowercased().contains(text) } : contentList.currentHelpArticles()
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -245,5 +305,14 @@ extension GydeView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            
+        } else {
+            // Show the webview
+            self.delegate?.showWebView(helpArticles: self.filteredHelpArticles[indexPath.row])
+        }
     }
 }

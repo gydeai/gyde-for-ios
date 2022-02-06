@@ -22,10 +22,25 @@ class GydeSDKWidgetViewController: UIViewController {
     
     func setup(list: ContentList) {
         let gydeView = GydeView()
+        gydeView.delegate = self
         gydeView.contentList = list
         self.view.addSubview(gydeView)
         gydeView.snp.makeConstraints { make in
             make.left.right.top.bottom.equalTo(self.view)
         }
+    }
+}
+
+extension GydeSDKWidgetViewController: GydeProtocol {
+    
+    func showWalkthrough() {
+        
+    }
+    
+    func showWebView(helpArticles: HelpArticles) {
+        let vc = GydeWebViewController()
+        vc.urlString = helpArticles.urlForMobileWebView
+        vc.titleString = helpArticles.question
+        self.present(vc, animated: true, completion: nil)
     }
 }

@@ -14,6 +14,9 @@ public class AppData {
     
     var currentLanguage: String = "English"
     
+    var headerColor: UIColor?
+    var headerTextColor: UIColor?
+    
     func setLanguage(language: String) {
         self.currentLanguage = language
     }
