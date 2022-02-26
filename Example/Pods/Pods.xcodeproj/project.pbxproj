@@ -38,11 +38,14 @@
 		90FD5AE525E138A473723FD79AF73273 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE00ECC24C5CC6DC938204FF42AD0E5 /* ConstraintDSL.swift */; };
 		968B4874A9F12D67C8B901136C9C8157 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E13B89FFD81AACB7530769CA05EEA26B /* SnapKit-dummy.m */; };
 		A0F754C88A64972A40A9008B0AD52109 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91164BE769DA144776663FBF46785561 /* ConstraintDirectionalInsets.swift */; };
+		A22F652727C8758B00116BE6 /* StepsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F652627C8758B00116BE6 /* StepsManager.swift */; };
 		A25EE70227A513BE00D2FEAC /* GydeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EE70127A513BE00D2FEAC /* GydeCell.swift */; };
 		A26A597127AE494B00733D9E /* GydeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597027AE494B00733D9E /* GydeWebViewController.swift */; };
 		A26A597327AF9E2300733D9E /* GydeLanguageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */; };
 		A26A597527AFAA5B00733D9E /* GydeLanguageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */; };
+		A26CD19B27CA144A002DAC48 /* GydeCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */; };
 		A26ED9B427A5892100BAF0DF /* Appdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED9B327A5892100BAF0DF /* Appdata.swift */; };
+		A2F0974827C23CAC00380846 /* GydeWalkthroughPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */; };
 		A4467357581E8345DD348683CC4111AF /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0116B84A6773B75FCBFCB479E740F0F3 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A53D3AF15CE8D348306EF11619C5D166 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3B0B200350EAC8F42EF635FF31BD1 /* ConstraintMakerEditable.swift */; };
 		A8086364041082C9F5856A1252DE5BFE /* GydeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6ECB3B0BEEA182302B5241F93B9BF2 /* GydeView.swift */; };
@@ -163,11 +166,14 @@
 		9B44C88EAD1D2AAE0C40B4699A225CC3 /* HelpArticles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpArticles.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1CD432F32277BB93DEAADA626ECEC5B /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
+		A22F652627C8758B00116BE6 /* StepsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsManager.swift; sourceTree = "<group>"; };
 		A25EE70127A513BE00D2FEAC /* GydeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeCell.swift; sourceTree = "<group>"; };
 		A26A597027AE494B00733D9E /* GydeWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeWebViewController.swift; sourceTree = "<group>"; };
 		A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorView.swift; sourceTree = "<group>"; };
 		A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorCell.swift; sourceTree = "<group>"; };
+		A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeCalloutView.swift; sourceTree = "<group>"; };
 		A26ED9B327A5892100BAF0DF /* Appdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdata.swift; sourceTree = "<group>"; };
+		A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeWalkthroughPromptView.swift; sourceTree = "<group>"; };
 		A51E99894F75F00A281BE6A32FBDE495 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		A578C9411AC0303ACED2800881F00869 /* Pods-gyde-ios_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gyde-ios_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A7D358AA1606C7B2CDC8555485807E9E /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 			children = (
 				A26ED9B327A5892100BAF0DF /* Appdata.swift */,
 				DA48A669AA4101CC307D73CFB887C29E /* Gyde.swift */,
+				A22F652627C8758B00116BE6 /* StepsManager.swift */,
 				AE667071A1262AB9D18E63FC7FB9FCAB /* Models */,
 				E547B52416D5A0DE1A73EEFCB6CFDB35 /* Pod */,
 				F94536597131644B99E16BB781B82BF8 /* Support Files */,
@@ -303,6 +310,8 @@
 				A25EE70127A513BE00D2FEAC /* GydeCell.swift */,
 				A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */,
 				A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */,
+				A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */,
+				A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */,
 			);
 			name = Views;
 			path = "gyde-ios/Classes/Views";
@@ -740,9 +749,12 @@
 				A26A597127AE494B00733D9E /* GydeWebViewController.swift in Sources */,
 				8390012B76D0FE4CB9072A1DE9EA2306 /* ContentList.swift in Sources */,
 				A26ED9B427A5892100BAF0DF /* Appdata.swift in Sources */,
+				A2F0974827C23CAC00380846 /* GydeWalkthroughPromptView.swift in Sources */,
 				A26A597327AF9E2300733D9E /* GydeLanguageSelectorView.swift in Sources */,
 				B0D5911A8E0F48ABB158BC574DB437F9 /* Flow.swift in Sources */,
 				367A1BC2D27483C5EA0CCC5E29E1D120 /* Gyde.swift in Sources */,
+				A22F652727C8758B00116BE6 /* StepsManager.swift in Sources */,
+				A26CD19B27CA144A002DAC48 /* GydeCalloutView.swift in Sources */,
 				2F084CE1BA72C5E4957BA6F85CEBCE07 /* gyde-ios-dummy.m in Sources */,
 				BA0D2F6CE44A5DCF33931FF81B60A110 /* GydeSDKWidgetViewController.swift in Sources */,
 				A8086364041082C9F5856A1252DE5BFE /* GydeView.swift in Sources */,

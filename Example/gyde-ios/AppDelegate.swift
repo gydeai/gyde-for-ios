@@ -44,3 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIStoryboard {
+    func instantiateVC(withIdentifier identifier: String) -> UIViewController? {
+        // "identifierToNibNameMap" – dont change it. It is a key for searching IDs
+        if let identifiersList = self.value(forKey: "identifierToNibNameMap") as? [String: Any] {
+            if identifiersList[identifier] != nil {
+                return self.instantiateViewController(withIdentifier: identifier)
+            }
+        }
+        return nil
+    }
+}

@@ -37,6 +37,12 @@ class ViewController: UIViewController {
         self.selectedCandidatesButton.layer.cornerRadius = 6
         self.helpButton.layer.cornerRadius = 6
         
+        self.addNewCandidateButton.tag = 0
+        self.applicationsButton.tag = 1
+        self.selectedCandidatesButton.tag = 2
+        self.helpButton.tag = 3
+        
+        gyde.delegate = self
         gyde.setup(appId: appId) { error in
             guard error == nil else {
                 self.loaded = false
@@ -67,3 +73,18 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: GydeDelegate {
+
+    func navigate(step: Steps, completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            if self.restorationIdentifier == step.screenName {
+                // Do nothing as the screen name is this only
+                print("Done")
+            } else {
+                // Navigate
+                print("Ok")
+            }
+            completion()
+        }
+    }
+}

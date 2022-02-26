@@ -8,16 +8,17 @@
 import Foundation
 
 public struct Steps: Encodable, Decodable {
-    let title: String
-    let content: String
-    let stepDescription: Int
-    let screenName: String
-    let placement: String
-    let gyClickFlag: Bool
-    let frame: String
-    let scrollTo: String
-    let gyDelay: String
-    let voiceOverPath: String
-    let voiceOverContent: String
-    let viewId: String
+    public let title: String
+    public let content: String
+    public let stepDescription: Int
+    public let screenName: String
+    public let placement: String
+    public let gyClickFlag: Bool
+    public let tag: Int
+    public let frame: String
+    public let scrollTo: String
+    public let gyDelay: String
+    public let voiceOverPath: String
+    public let voiceOverContent: String
+    public let viewId: String
 }

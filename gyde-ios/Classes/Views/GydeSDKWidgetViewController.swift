@@ -14,6 +14,8 @@ class GydeSDKWidgetViewController: UIViewController {
             setup(list: contentList)
         }
     }
+    
+    var walkthroughStart: ((String) -> Void?)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,10 @@ class GydeSDKWidgetViewController: UIViewController {
 
 extension GydeSDKWidgetViewController: GydeProtocol {
     
-    func showWalkthrough() {
-        
+    func showWalkthrough(walkthrough: Walkthrough) {
+        dismiss(animated: true) { [unowned self] in
+            self.walkthroughStart?(walkthrough.flowId)
+        }
     }
     
     func showWebView(helpArticles: HelpArticles) {

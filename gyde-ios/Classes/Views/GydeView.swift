@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol GydeProtocol {
-    func showWalkthrough()
+    func showWalkthrough(walkthrough: Walkthrough)
     func showWebView(helpArticles: HelpArticles)
 }
 
@@ -35,6 +35,7 @@ public class GydeView: UIView {
     let tableView = UITableView()
     let languageSelectorButton = UIButton()
     let languageSelectorView = GydeLanguageSelectorView()
+    let walkthroughPromptView = GydeWalkthroughPromptView()
     
     var filteredWalkthroughs = [Walkthrough]()
     var filteredHelpArticles = [HelpArticles]()
@@ -179,6 +180,12 @@ public class GydeView: UIView {
             }
         }
         
+        walkthroughPromptView.alpha = 0
+        self.addSubview(walkthroughPromptView)
+        walkthroughPromptView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalTo(self)
+        }
+        
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
@@ -309,7 +316,28 @@ extension GydeView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if segmentedControl.selectedSegmentIndex == 0 {
-            
+        
+            let selectedWalkthrough = self.filteredWalkthroughs[indexPath.row]
+            // API call for button flow
+            Gyde.sharedInstance.getButtonFlow(appId: Gyde.sharedInstance.appId, flowId: selectedWalkthrough.flowId) { [unowned self] flow in
+                DispatchQueue.main.async {
+                    self.walkthroughPromptView.headerLabel.text = flow?.flowName
+                    self.walkthroughPromptView.headerSubtitleLabel.text = flow?.flowInitText
+                    UIView.animate(withDuration: 0.33) {
+                        self.walkthroughPromptView.alpha = 1
+                    }
+                }
+            }
+
+            walkthroughPromptView.dismissBlock = { [unowned self] shouldDismiss in
+                UIView.animate(withDuration: 0.33) {
+                    self.walkthroughPromptView.alpha = 0
+                } completion: { _ in
+                    if shouldDismiss {
+                        self.delegate?.showWalkthrough(walkthrough: self.filteredWalkthroughs[indexPath.row])
+                    }
+                }
+            }
         } else {
             // Show the webview
             self.delegate?.showWebView(helpArticles: self.filteredHelpArticles[indexPath.row])

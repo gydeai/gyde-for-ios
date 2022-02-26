@@ -7,9 +7,15 @@
 
 import Foundation
 
+public protocol GydeDelegate {
+    func navigate(step: Steps, completion: @escaping () -> Void)
+}
+
 public class Gyde {
     
     private var contentList: ContentList?
+    
+    var currentViewController: UIViewController?
     
     private var sdkBundle: Bundle {
         let framework = Bundle(for: Gyde.self)
@@ -20,11 +26,19 @@ public class Gyde {
     /// Singleton
     public static let sharedInstance = Gyde()
     
+    public var delegate: GydeDelegate?
+    
+    var appId: String!
+    
+    var steps: StepsManager?
+    
     private init() {}
     
-    // MARK:- Public
+    // MARK: Public
     
     public func setup(appId: String, completion: @escaping (Error?) -> Void) {
+        
+        self.appId = appId
         
         // Get Content List
         getContentList(appId: appId) { [weak self] list in
@@ -40,25 +54,31 @@ public class Gyde {
             completion(nil)
             
         }
-        
-//        // Get Button Flow
-//        getButtonFlow(appId: id, flowId: "95e3d296-0be6-4bfb-8d71-0d7c1b17c40c") { flow in
-//            print("Flow \(flow)")
-//        }
     }
     
     public func startWidget(mainVC: UIViewController) {
-        
+        self.currentViewController = mainVC
         guard let list = contentList else {
             return
         }
         
         let vc = GydeSDKWidgetViewController()
         vc.contentList = list
+        vc.walkthroughStart = { [unowned self] flowId in
+            // Get Button Flow
+            self.getButtonFlow(appId: appId, flowId: flowId) { flow in
+                guard let flow = flow else {
+                    return
+                }
+
+                self.steps = StepsManager(steps: flow.steps)
+                self.steps?.delegate = self
+            }
+        }
         mainVC.present(vc, animated: true, completion: nil)
     }
     
-    // MARK:- Internal
+    // MARK: Internal
     
     func getContentList(appId: String, completion: @escaping (ContentList?) -> Void) {
         let url = URL(string: "https://stage-app.gyde.ai/android/getContentList")!
@@ -75,14 +95,9 @@ public class Gyde {
             session.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     do {
-                        if let content = try? JSONDecoder().decode(ContentList.self, from: data) {
-                            print(content)
-                            completion(content)
-                        } else {
-                            completion(nil)
-                        }
+                        let content = try JSONDecoder().decode(ContentList.self, from: data)
+                        completion(content)
                     } catch {
-                        print(error)
                         completion(nil)
                     }
                 } else {
@@ -103,19 +118,11 @@ public class Gyde {
         request.httpBody = httpBody
         let session = URLSession.shared
             session.dataTask(with: request) { (data, response, error) in
-                if let response = response {
-                    print(response)
-                }
                 if let data = data {
                     do {
-                        if let flow = try? JSONDecoder().decode(Flow.self, from: data) {
-                            print(flow)
-                            completion(flow)
-                        } else {
-                            completion(nil)
-                        }
+                        let flow = try JSONDecoder().decode(Flow.self, from: data)
+                        completion(flow)
                     } catch {
-                        print(error)
                         completion(nil)
                     }
                 }
@@ -126,4 +133,60 @@ public class Gyde {
 
 public enum GydeError : Error {
     case NoList
+}
+
+enum StepDescription: Int {
+    case showToolTip = 1
+    case newScreen = 2
+    case drawerMenu = 3
+    case newTab = 4
+}
+
+extension Gyde: StepsDelegate {
+    
+    func executeStep(_ step: Steps) {
+        
+        if step.stepDescription == StepDescription.showToolTip.rawValue {
+            if let vc = self.currentViewController, let view = vc.view.viewWithTag(step.tag) {
+                var calloutView: GydeCalloutView?
+                calloutView = GydeCalloutView(currentFrame: view.frame, step: step)
+                vc.view.addSubview(calloutView!)
+                calloutView?.snp.makeConstraints { make in
+                    make.left.right.top.bottom.equalTo(vc.view)
+                }
+                
+                // When tapped on the next button
+                calloutView?.nextCallback = {
+                    UIView.animate(withDuration: 0.33) {
+                        calloutView?.triangleView.alpha = 0
+                        calloutView?.containerView.alpha = 0
+                    } completion: { _ in
+                        calloutView?.removeFromSuperview()
+                        calloutView = nil
+                        self.steps?.steps.removeFirst()
+                        self.steps?.executeFlow()
+                    }
+                }
+                
+                // When tapped on the close button
+                calloutView?.closeCallback = {
+                    UIView.animate(withDuration: 0.33) {
+                        calloutView?.triangleView.alpha = 0
+                        calloutView?.containerView.alpha = 0
+                    } completion: { _ in
+                        calloutView?.removeFromSuperview()
+                        calloutView = nil
+                        self.steps?.steps.removeFirst()
+                        self.steps?.executeFlow()
+                    }
+                }
+                
+            }
+        } else if step.stepDescription == StepDescription.newScreen.rawValue {
+            self.delegate?.navigate(step: step, completion: {
+                self.steps?.steps.removeFirst()
+                self.steps?.executeFlow()
+            })
+        }
+    }
 }
