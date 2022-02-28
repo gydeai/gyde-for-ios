@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A271C6D827CBD6670062C501 /* AddNewCandidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271C6D727CBD6670062C501 /* AddNewCandidateViewController.swift */; };
 		A67D7035E94E91BCB9566727 /* Pods_gyde_ios_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789B8F4662E2B27487CB246F /* Pods_gyde_ios_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		789B8F4662E2B27487CB246F /* Pods_gyde_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gyde_ios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFCDD9A916B1C578D05E379 /* Pods_gyde_ios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gyde_ios_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED323D04B90C14CA9E412A5 /* Pods-gyde-ios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gyde-ios_Example.debug.xcconfig"; path = "Target Support Files/Pods-gyde-ios_Example/Pods-gyde-ios_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A271C6D727CBD6670062C501 /* AddNewCandidateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCandidateViewController.swift; sourceTree = "<group>"; };
 		B9123D5DFAF1AD830C21B244 /* Pods-gyde-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gyde-ios_Example.release.xcconfig"; path = "Target Support Files/Pods-gyde-ios_Example/Pods-gyde-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F76600752479E7BA417442E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				A271C6D727CBD6670062C501 /* AddNewCandidateViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = ZZVNY4H5UM;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -334,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				A271C6D827CBD6670062C501 /* AddNewCandidateViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +485,7 @@
 			baseConfigurationReference = 9ED323D04B90C14CA9E412A5 /* Pods-gyde-ios_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZZVNY4H5UM;
 				INFOPLIST_FILE = "gyde-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -496,6 +502,7 @@
 			baseConfigurationReference = B9123D5DFAF1AD830C21B244 /* Pods-gyde-ios_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZZVNY4H5UM;
 				INFOPLIST_FILE = "gyde-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

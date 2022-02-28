@@ -24,7 +24,7 @@
   },
   "resource_bundles": {
     "gyde-ios": [
-      "HVCamera/Swift/Assets/**/*"
+      "gyde-ios/Assets/**/*"
     ]
   },
   "dependencies": {

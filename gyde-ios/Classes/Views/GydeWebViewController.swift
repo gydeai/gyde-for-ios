@@ -41,7 +41,7 @@ class GydeWebViewController: UIViewController {
         headerView.addSubview(headerTitleLabel)
         headerTitleLabel.textColor = AppData.sharedInstance.headerTextColor
         headerTitleLabel.text = titleString
-        headerTitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        headerTitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 18)
         headerTitleLabel.adjustsFontSizeToFitWidth = true
         headerTitleLabel.minimumScaleFactor = 0.5
         headerTitleLabel.snp.makeConstraints { make in

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol GydeDelegate {
+public protocol GydeDelegate: AnyObject {
     func navigate(step: Steps, completion: @escaping () -> Void)
 }
 
@@ -15,7 +15,7 @@ public class Gyde {
     
     private var contentList: ContentList?
     
-    var currentViewController: UIViewController?
+    public var currentViewController: UIViewController?
     
     private var sdkBundle: Bundle {
         let framework = Bundle(for: Gyde.self)
@@ -26,7 +26,7 @@ public class Gyde {
     /// Singleton
     public static let sharedInstance = Gyde()
     
-    public var delegate: GydeDelegate?
+    public weak var delegate: GydeDelegate?
     
     var appId: String!
     
@@ -147,9 +147,10 @@ extension Gyde: StepsDelegate {
     func executeStep(_ step: Steps) {
         
         if step.stepDescription == StepDescription.showToolTip.rawValue {
-            if let vc = self.currentViewController, let view = vc.view.viewWithTag(step.tag) {
+            if let vc = self.currentViewController, let tag = step.tag, let view = vc.view.viewWithTag(tag) {
                 var calloutView: GydeCalloutView?
                 calloutView = GydeCalloutView(currentFrame: view.frame, step: step)
+                calloutView?.lastStep = self.steps?.count == 1
                 vc.view.addSubview(calloutView!)
                 calloutView?.snp.makeConstraints { make in
                     make.left.right.top.bottom.equalTo(vc.view)
@@ -164,6 +165,7 @@ extension Gyde: StepsDelegate {
                         calloutView?.removeFromSuperview()
                         calloutView = nil
                         self.steps?.steps.removeFirst()
+                        self.steps?.count -= 1
                         self.steps?.executeFlow()
                     }
                 }
@@ -177,6 +179,7 @@ extension Gyde: StepsDelegate {
                         calloutView?.removeFromSuperview()
                         calloutView = nil
                         self.steps?.steps.removeFirst()
+                        self.steps?.count = 0
                         self.steps?.executeFlow()
                     }
                 }

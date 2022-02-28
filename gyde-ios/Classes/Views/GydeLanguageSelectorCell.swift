@@ -29,7 +29,7 @@ class GydeLanguageSelectorCell: UITableViewCell {
             make.width.height.equalTo(20)
         }
         
-        selectedView.backgroundColor = UIColor.purple
+        selectedView.backgroundColor = UIColor.systemIndigo
         selectedView.alpha = 0
         selectedView.layer.cornerRadius = 5
         selectedView.isUserInteractionEnabled = false
@@ -39,7 +39,7 @@ class GydeLanguageSelectorCell: UITableViewCell {
             make.width.height.equalTo(10)
         }
         
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(selectedButton.snp.right).offset(15)

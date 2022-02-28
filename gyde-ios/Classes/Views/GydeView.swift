@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol GydeProtocol {
+protocol GydeProtocol: AnyObject {
     func showWalkthrough(walkthrough: Walkthrough)
     func showWebView(helpArticles: HelpArticles)
 }
@@ -23,7 +23,13 @@ public class GydeView: UIView {
         }
     }
     
-    var delegate: GydeProtocol?
+    fileprivate var sdkBundle: Bundle {
+        let framework = Bundle(for: Gyde.self)
+        return Bundle(url: framework.url(forResource: "gyde-ios",
+                                         withExtension: "bundle")!)!
+    }
+    
+    weak var delegate: GydeProtocol?
     
     let headerView = UIView()
     let headerTitleLabel = UILabel()
@@ -85,26 +91,25 @@ public class GydeView: UIView {
         }
         
         headerView.addSubview(headerTitleLabel)
-        headerTitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        headerTitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
         headerTitleLabel.snp.makeConstraints { make in
             make.left.top.equalTo(headerView).offset(15)
         }
         
         headerView.addSubview(headerSubtitleLabel)
-        headerSubtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        headerSubtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 18)
         headerSubtitleLabel.snp.makeConstraints { make in
             make.left.equalTo(headerTitleLabel)
             make.top.equalTo(headerTitleLabel.snp.bottom).offset(5)
         }
         
         headerView.addSubview(headerButton)
-        headerButton.setImage(UIImage(systemName: "line.horizontal.3"), for: .normal)
-        headerButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        headerButton.setImage(UIImage(named: "dots", in: self.sdkBundle, compatibleWith: nil), for: .normal)
         headerButton.addTarget(self, action: #selector(headerButtonAction), for: .touchUpInside)
         headerButton.snp.makeConstraints { make in
             make.right.equalTo(headerView).offset(-15)
             make.centerY.equalTo(headerSubtitleLabel)
-            make.width.height.equalTo(30)
+            make.width.height.equalTo(24)
         }
         
         segmentedControl.selectedSegmentIndex = 0
@@ -141,6 +146,7 @@ public class GydeView: UIView {
         
         tableView.register(GydeCell.self, forCellReuseIdentifier: "GydeCell")
         tableView.separatorStyle = .none
+        tableView.bounces = false
         tableView.dataSource = self
         tableView.delegate = self
         self.addSubview(tableView)
@@ -153,7 +159,7 @@ public class GydeView: UIView {
         languageSelectorButton.alpha = 0
         languageSelectorButton.backgroundColor = .white
         languageSelectorButton.layer.cornerRadius = 4
-        languageSelectorButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        languageSelectorButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 14)
         languageSelectorButton.setTitleColor(.black, for: .normal)
         languageSelectorButton.setTitle("Select Language", for: .normal)
         languageSelectorButton.addTarget(self, action: #selector(languageSelection), for: .touchUpInside)
@@ -187,6 +193,36 @@ public class GydeView: UIView {
         }
         
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        
+        let poweredByLabel = UILabel()
+        poweredByLabel.font = UIFont(name: "AvenirNext-Medium", size: 13)
+        poweredByLabel.text = "Powered by"
+        poweredByLabel.textColor = .darkText
+        self.addSubview(poweredByLabel)
+        poweredByLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self)
+            make.bottom.equalTo(self).offset(-30)
+        }
+        
+        let poweredByGydeImageView = UIImageView()
+        poweredByGydeImageView.image = UIImage(named: "gyde-mini-logo", in: self.sdkBundle, compatibleWith: nil)
+        poweredByGydeImageView.contentMode = .scaleAspectFit
+        self.addSubview(poweredByGydeImageView)
+        poweredByGydeImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(poweredByLabel)
+            make.right.equalTo(poweredByLabel.snp.left).offset(-2)
+            make.width.height.equalTo(30)
+        }
+        
+        let gydeFooterLabel = UILabel()
+        gydeFooterLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
+        gydeFooterLabel.text = "Gyde"
+        gydeFooterLabel.textColor = .systemIndigo
+        self.addSubview(gydeFooterLabel)
+        gydeFooterLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(poweredByLabel)
+            make.left.equalTo(poweredByLabel.snp.right).offset(3)
+        }
     }
     
     // MARK: Actions

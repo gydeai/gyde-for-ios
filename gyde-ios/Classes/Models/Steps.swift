@@ -14,7 +14,7 @@ public struct Steps: Encodable, Decodable {
     public let screenName: String
     public let placement: String
     public let gyClickFlag: Bool
-    public let tag: Int
+    public let tag: Int?
     public let frame: String
     public let scrollTo: String
     public let gyDelay: String

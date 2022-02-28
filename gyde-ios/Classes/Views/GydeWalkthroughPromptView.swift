@@ -49,35 +49,35 @@ class GydeWalkthroughPromptView: UIView {
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
             make.width.equalTo(self).multipliedBy(0.8)
-            make.height.equalTo(240)
+            make.height.equalTo(200)
         }
         
-        headerLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        headerLabel.textColor = .purple
+        headerLabel.font = UIFont(name: "AvenirNext-Bold", size: 18)
+        headerLabel.textColor = .systemIndigo
         headerLabel.textAlignment = .center
         headerLabel.numberOfLines = 0
         containerView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(15)
-            make.width.equalTo(containerView).multipliedBy(0.95)
+            make.top.equalTo(containerView).offset(30)
+            make.width.equalTo(containerView).multipliedBy(0.9)
             make.centerX.equalTo(containerView)
         }
         
-        headerSubtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        headerSubtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
         headerSubtitleLabel.textAlignment = .center
         headerSubtitleLabel.numberOfLines = 0
         containerView.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints { make in
             make.top.equalTo(headerLabel.snp.bottom).offset(15)
             make.centerX.equalTo(headerLabel)
-            make.width.equalTo(containerView).multipliedBy(0.95)
+            make.width.equalTo(containerView).multipliedBy(0.9)
         }
         
         let selectButton = UIButton()
         selectButton.addTarget(self, action: #selector(selectAction), for: .touchUpInside)
-        selectButton.backgroundColor = .purple
+        selectButton.backgroundColor = .systemIndigo
         selectButton.setTitleColor(UIColor.white, for: .normal)
-        selectButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        selectButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 14)
         selectButton.setTitle("Start", for: .normal)
         selectButton.layer.cornerRadius = 15
         containerView.addSubview(selectButton)

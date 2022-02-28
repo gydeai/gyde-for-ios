@@ -7,145 +7,153 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01E517665ECD9F9C842FDD2D846DACF2 /* gyde-ios-gyde-ios in Resources */ = {isa = PBXBuildFile; fileRef = BD01BD44720DD817FCC2D0259B72950A /* gyde-ios-gyde-ios */; };
+		03C4874EAE9BB6E0CBE603B31601298E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		144DA93A55A598F5197F10C729FBDD69 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9341666EAC154422A032092A7DC2D7 /* UILayoutSupport+Extensions.swift */; };
 		17BE0F4E51B0FB968125F1A520607FD8 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB9BB47A2175181386A432C07253AE /* ConstraintMultiplierTarget.swift */; };
+		1C8CABD2D1549CB8D7629D2227449662 /* gyde-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D60721B3E22C1CADB728A19839CB4 /* gyde-ios-dummy.m */; };
 		1E9EEA756F2774D73347F1660EEFE3E9 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9055CEA7890517265589BD23D73A49 /* ConstraintView+Extensions.swift */; };
 		221630DE850A3FE55CF153D21EDBD4A8 /* Pods-gyde-ios_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C9E80EC981EA7FE33AD93143CEFB2A /* Pods-gyde-ios_Example-dummy.m */; };
 		23A7812E9C1CA1AE8A21DBAF1C4D170B /* Pods-gyde-ios_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6262D6518DCF97F7A674B31054C08EE4 /* Pods-gyde-ios_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2625B40EB888ED04183F15B1AE7284E2 /* GydeLanguageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C4319F56756C983127C7D516A3372 /* GydeLanguageSelectorView.swift */; };
 		274DF0E2BF04F6F4F9F1E70CF513A4F2 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A46A8054577838D49C60142EB88B13 /* ConstraintLayoutSupportDSL.swift */; };
-		2801E2AE9FF0A0615BD6BC82E06539C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2F084CE1BA72C5E4957BA6F85CEBCE07 /* gyde-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E9045FB32A3B6950D1F546F085F99 /* gyde-ios-dummy.m */; };
-		367A1BC2D27483C5EA0CCC5E29E1D120 /* Gyde.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A669AA4101CC307D73CFB887C29E /* Gyde.swift */; };
+		354750764D8D13001FE0B386C2B86DA0 /* Appdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E117BC02EC2E824EE00A99220EF2F3 /* Appdata.swift */; };
+		38B00F0BA08574D42007A6B06D6431A9 /* Gyde.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306008FA3A334A93B32A4321E48F0438 /* Gyde.swift */; };
+		3A400A3DA731466A1226A598F8E31BF4 /* GydeCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19618AAC3723299EBCBF1A1708C9C9EC /* GydeCalloutView.swift */; };
 		3B60C02F6E42FD06B128473E00A94224 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D705690D879064ED84970813189D8D4 /* ConstraintLayoutSupport.swift */; };
 		3C1BF66E1007817688266774CF1FE5B1 /* Pods-gyde-ios_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7F95F96C89B65F30E8CA9EB87FFB46 /* Pods-gyde-ios_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CD5FAFC746A76D73C3F501734199DFF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E066869A95E00B949CBA4D2284C35F /* Typealiases.swift */; };
 		3DEDFA52B3A196F6D3E1F0937617628A /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF299D2EEB87E7DD02630E87B96224 /* ConstraintLayoutGuide+Extensions.swift */; };
 		43863B6D6A0E47B6648BB7B469736EDD /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C5B72775F6AF0891BF331F32FE10D /* LayoutConstraint.swift */; };
-		443653DFAF67919A18BFCC884F8B66FC /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB4614F5AFD47029F04A9CEE0D555A /* Steps.swift */; };
+		49B95C1C40268B7FE6F6686A5D9DDF70 /* GydeSDKWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4ECA3C467CF91566F4F8161B9A229B /* GydeSDKWidgetViewController.swift */; };
+		4AEE2D0D168AD721833558D643629F0F /* GydeWalkthroughPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F23262CE1E6D96C288F791DE12A203 /* GydeWalkthroughPromptView.swift */; };
 		4CA13A0527BC57DE2C54A0F3B5ED8652 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C01543F3BCEDEE51ABAA696513D0B /* LayoutConstraintItem.swift */; };
 		51A4A1046676D304410544EB56732A49 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50380F281EC3EE769C85035CCEA77226 /* Constraint.swift */; };
 		5E8BA529DFB4529006967624044FEC1C /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56006AA49A060CA2830F32CD6F394823 /* ConstraintViewDSL.swift */; };
 		62F299B4704A7C95FB5866C6CDE2E2FD /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B200BD964F52F6693D4168248B8645 /* ConstraintOffsetTarget.swift */; };
-		7169C4233C86D565B37A07C0D7DE7233 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A44A88E58E3653603116328BC8B51 /* Walkthrough.swift */; };
+		6FC2E17CAD2E457D4BE040597ACD76B1 /* GydeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0D213ED49456837F73C046888E5F8 /* GydeView.swift */; };
+		721D44A2252ADDD9BBD69DADCB485C1F /* StepsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A627585D057263528B0114E66ECEB26 /* StepsManager.swift */; };
 		7580FAAB1BDA52F5A969E5571D1A5973 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F460233F2A555D41511B6CCA66A124 /* ConstraintAttributes.swift */; };
 		7764AA5F6BBFC6ECE43959923DD007D3 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D358AA1606C7B2CDC8555485807E9E /* ConstraintDirectionalInsetTarget.swift */; };
+		790C12E21F801EE22B7E151EDD23736B /* GydeAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FF646F4803BED959AC23E8CC8A9A64 /* GydeAssets.xcassets */; };
+		81504FA1119B8B61C5F6D5387B9D3F8D /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F35D13A5C845B3A65B72E6028F18375 /* Steps.swift */; };
 		825062025906CE93C5D124E1FD9A811E /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F10DE451FED17810D9B5C237324A5 /* ConstraintMakerExtendable.swift */; };
-		8390012B76D0FE4CB9072A1DE9EA2306 /* ContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577DED496C259C59EB770AB5AC227334 /* ContentList.swift */; };
 		8449EB1DFD43E222D687D5A8D2088D2D /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BE9F3D55FDB29EF516F6D6B1B6BCA /* ConstraintLayoutGuideDSL.swift */; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549471CD1FE3A1E1865DD172864918D3 /* ConstraintInsets.swift */; };
 		8FD9CD608C4EAAFDE6AC7B8B9EF0FF5E /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1D9F6F4E2364DFAF158E04AF5D5EAA /* ConstraintDescription.swift */; };
 		90FD5AE525E138A473723FD79AF73273 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE00ECC24C5CC6DC938204FF42AD0E5 /* ConstraintDSL.swift */; };
 		968B4874A9F12D67C8B901136C9C8157 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E13B89FFD81AACB7530769CA05EEA26B /* SnapKit-dummy.m */; };
+		9A1566F2814D94C14CDE93F9F84B4CE4 /* HelpArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD3FC482CE9B67DC4F8B32E69DF01 /* HelpArticles.swift */; };
 		A0F754C88A64972A40A9008B0AD52109 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91164BE769DA144776663FBF46785561 /* ConstraintDirectionalInsets.swift */; };
-		A22F652727C8758B00116BE6 /* StepsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F652627C8758B00116BE6 /* StepsManager.swift */; };
-		A25EE70227A513BE00D2FEAC /* GydeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EE70127A513BE00D2FEAC /* GydeCell.swift */; };
-		A26A597127AE494B00733D9E /* GydeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597027AE494B00733D9E /* GydeWebViewController.swift */; };
-		A26A597327AF9E2300733D9E /* GydeLanguageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */; };
-		A26A597527AFAA5B00733D9E /* GydeLanguageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */; };
-		A26CD19B27CA144A002DAC48 /* GydeCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */; };
-		A26ED9B427A5892100BAF0DF /* Appdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED9B327A5892100BAF0DF /* Appdata.swift */; };
-		A2F0974827C23CAC00380846 /* GydeWalkthroughPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */; };
 		A4467357581E8345DD348683CC4111AF /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0116B84A6773B75FCBFCB479E740F0F3 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A53D3AF15CE8D348306EF11619C5D166 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3B0B200350EAC8F42EF635FF31BD1 /* ConstraintMakerEditable.swift */; };
-		A8086364041082C9F5856A1252DE5BFE /* GydeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6ECB3B0BEEA182302B5241F93B9BF2 /* GydeView.swift */; };
-		B0D5911A8E0F48ABB158BC574DB437F9 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFBCED2898C7E35ADD0575E3F175CE5 /* Flow.swift */; };
 		B543FD108C1C6AF6129CB4991553218B /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E41DBB680A3A2ECDDD2210311B230 /* ConstraintConfig.swift */; };
 		B6B2E694083CAA208E4CF36FC8299A21 /* Pods-gyde-ios_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BBD4AF41B6E4B9FCC92772531F9271 /* Pods-gyde-ios_Tests-dummy.m */; };
-		BA0D2F6CE44A5DCF33931FF81B60A110 /* GydeSDKWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0ABF28D5965CBEC5A5EC890BD28B4 /* GydeSDKWidgetViewController.swift */; };
 		BD333CDBCF5D2FD55920336FC271DF33 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474AFC560A8B414B467174737DBC891A /* ConstraintItem.swift */; };
 		BEBF920FEB959B46A76BAADF22E5CD15 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EC377264B25FB0E67D150E37E87CD /* ConstraintInsetTarget.swift */; };
 		C15711D8B2889C1844B5B0DEE87FBAC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C2D813810CE8E25D86C688B17F6CE87E /* HelpArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44C88EAD1D2AAE0C40B4699A225CC3 /* HelpArticles.swift */; };
 		C61D3BC32A28A405C934C00039AD2583 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D990E0FED5B41C1F13AC6B08208A99B /* ConstraintConstantTarget.swift */; };
 		CB194156C900B767B0160AF72EDF354D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BC33167429B9926FB24A17F01568C /* ConstraintMaker.swift */; };
 		CB8E4BF0D710970BE2CB4C87ED1043E4 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FB64349F5678CE1709979CF0DD952 /* ConstraintMakerRelatable.swift */; };
+		CC457708AD3D1925C2AAF736AD27B610 /* GydeLanguageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0229D3E75CC736E40F45A62C64BEC2 /* GydeLanguageSelectorCell.swift */; };
 		CCA22C9F421C9E8C13009947816D8C82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CE60468857969785B8F4D314002F0340 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FD3C3B4E1AADC306406DC9D5C418D /* Flow.swift */; };
 		D13D417B236E736EEAE7217B5CE3EC5C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D02329E74D733C03BF6BAE1F564481 /* ConstraintMakerFinalizable.swift */; };
-		D38D938C0227591D88D05AF89F60D04B /* gyde-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4861D7C4E73472F6FE2FC891B8D5565 /* gyde-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D59C2826AD288ECFF576B2AFA312716C /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25479F58B67AA43E092C7B156C1B5C1B /* ConstraintRelation.swift */; };
+		E176F38E3D934EFD3449A4EE24704122 /* GydeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58A8CE6BCC7F116AFBB8003CB15344 /* GydeCell.swift */; };
+		E1E3F1FF245C3CF9D60C10A7ADBEBF76 /* gyde-ios-gyde-ios in Resources */ = {isa = PBXBuildFile; fileRef = BD01BD44720DD817FCC2D0259B72950A /* gyde-ios-gyde-ios */; };
 		E36244E8BF4AC941E82DAF16DDF4BBC2 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716AD15FADF38A93170E034F2BCE457 /* ConstraintPriorityTarget.swift */; };
+		E8249B49D80228346CBF38471E7449AD /* ContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F482CF840B4B12CE0A8B6720668EE /* ContentList.swift */; };
 		E8EAADACF3BAE33BDECBC7214EAE9CD2 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975CA5A0D26BC84F3EE9912FEBDA795 /* ConstraintRelatableTarget.swift */; };
+		EA913BF52A1F1BD6AD651EFF70C203E1 /* gyde-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2C1F0853B2EDE8902BFF306C1110D7 /* gyde-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE6C364198A763EBBF49237035D86439 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5188AE61F0E667CD9E7ED28CDD61C /* ConstraintLayoutGuide.swift */; };
+		EF0ECA1173322B4862EB75904B55F750 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F775487F3DDA671324AC94DFF4EFDC /* Walkthrough.swift */; };
 		F10586462FB54CEA169A1A7A469A926D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038D2FAA2F6B073D1B64B8635F4E3E6 /* Debugging.swift */; };
 		F24D06C23DAB2F52A30C886A7A8177C7 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E99894F75F00A281BE6A32FBDE495 /* ConstraintView.swift */; };
 		F2C817C166B2DE613222C41015A586C9 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A53CAF547D71AEFABE49D91B4E6816 /* ConstraintMakerPriortizable.swift */; };
 		F343BA4E457FFDB0165492AECAEF0BCC /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD95F32F2E57D6B9100B77B93F013C /* ConstraintPriority.swift */; };
+		F98A89C703DBC11DB8C3E42B9B51EE17 /* GydeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5611831ACD343F4F2BCB12BC64CEBE7E /* GydeWebViewController.swift */; };
 		FFF742833F5F98FCB3003D1E2EAEA02B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D81C68EF673CB07E33CFD6D4AC2D360 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC519A06DC3535904CAE88180186CB82;
-			remoteInfo = "gyde-ios-gyde-ios";
-		};
-		3ECF8EBE45A02FDEA336D0B142D6F315 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
-			remoteInfo = SnapKit;
-		};
-		81577F58A0EE579EFB90A17688BDDBD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
-			remoteInfo = SnapKit;
-		};
-		884B8FE1C9A02FDA740BB75CC685EF58 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF213667E6093C781DD1FDEF32BA7CCA;
-			remoteInfo = "Pods-gyde-ios_Example";
-		};
-		A86331165C558A5E092862DEE1BB547C /* PBXContainerItemProxy */ = {
+		0A5E000F8424A7E69C0451358EC2112A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E23BB5AD8B9B9F7BB78A652B05E3BDFB;
 			remoteInfo = "gyde-ios";
 		};
+		A645EB8C6EE6B6B13CFE9FED906F75E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC519A06DC3535904CAE88180186CB82;
+			remoteInfo = "gyde-ios-gyde-ios";
+		};
+		BB9276F6EBD27CB4211289FD06BFA35C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
+		C360904DF7344AB0B7E8EEEAC9F99D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
+		DA5206B6B6836D8B602866455BB92777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF213667E6093C781DD1FDEF32BA7CCA;
+			remoteInfo = "Pods-gyde-ios_Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0116B84A6773B75FCBFCB479E740F0F3 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		02F9E1A1D3A1B82C9E3DC2D9D669D9E4 /* Pods-gyde-ios_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-gyde-ios_Tests.modulemap"; sourceTree = "<group>"; };
+		060154FF5A78596B29185D542CE55A8C /* gyde-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "gyde-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		09BF299D2EEB87E7DD02630E87B96224 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		0C7D07A70A022ABEFC765521593BAABA /* Pods-gyde-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gyde-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E3B19494846CCA33E3CB6CAE99F5CB9 /* Pods-gyde-ios_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gyde-ios_Example-frameworks.sh"; sourceTree = "<group>"; };
+		10E117BC02EC2E824EE00A99220EF2F3 /* Appdata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Appdata.swift; path = "gyde-ios/Classes/Appdata.swift"; sourceTree = "<group>"; };
 		11D02329E74D733C03BF6BAE1F564481 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
-		121A44A88E58E3653603116328BC8B51 /* Walkthrough.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
-		13BF4A477C5CE73DD7259156738733D1 /* gyde-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "gyde-ios-Info.plist"; sourceTree = "<group>"; };
 		13F460233F2A555D41511B6CCA66A124 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		141BC33167429B9926FB24A17F01568C /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		181AD3FC482CE9B67DC4F8B32E69DF01 /* HelpArticles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpArticles.swift; sourceTree = "<group>"; };
+		19618AAC3723299EBCBF1A1708C9C9EC /* GydeCalloutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeCalloutView.swift; sourceTree = "<group>"; };
 		1C89CEFF8227A6625AF0F40B8E92701B /* Pods-gyde-ios_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gyde-ios_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		250E41DBB680A3A2ECDDD2210311B230 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		25479F58B67AA43E092C7B156C1B5C1B /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		2975CA5A0D26BC84F3EE9912FEBDA795 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		2AFBCED2898C7E35ADD0575E3F175CE5 /* Flow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		2ACA95FAEEC526EFF46E34977D01F97E /* gyde-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "gyde-ios.modulemap"; sourceTree = "<group>"; };
+		2F0229D3E75CC736E40F45A62C64BEC2 /* GydeLanguageSelectorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorCell.swift; sourceTree = "<group>"; };
+		306008FA3A334A93B32A4321E48F0438 /* Gyde.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gyde.swift; path = "gyde-ios/Classes/Gyde.swift"; sourceTree = "<group>"; };
+		32F23262CE1E6D96C288F791DE12A203 /* GydeWalkthroughPromptView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeWalkthroughPromptView.swift; sourceTree = "<group>"; };
 		387D21EA38799D04DD15F3BAA1351DD1 /* Pods-gyde-ios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gyde-ios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		391A6F8B42D2CD885F8F3C4CE6859439 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		3A7F95F96C89B65F30E8CA9EB87FFB46 /* Pods-gyde-ios_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gyde-ios_Example-umbrella.h"; sourceTree = "<group>"; };
 		3D705690D879064ED84970813189D8D4 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		40688800F6FCD158782D9B00B468EF56 /* gyde-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "gyde-ios-prefix.pch"; sourceTree = "<group>"; };
+		3F9D60721B3E22C1CADB728A19839CB4 /* gyde-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "gyde-ios-dummy.m"; sourceTree = "<group>"; };
+		46373E817C89EB0893367DDE2B1C8E11 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		464C01543F3BCEDEE51ABAA696513D0B /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		474AFC560A8B414B467174737DBC891A /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		47B200BD964F52F6693D4168248B8645 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		4A5E9045FB32A3B6950D1F546F085F99 /* gyde-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "gyde-ios-dummy.m"; sourceTree = "<group>"; };
+		4A58A8CE6BCC7F116AFBB8003CB15344 /* GydeCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeCell.swift; sourceTree = "<group>"; };
 		4C8A0572CCEC8316292082E46B4B246D /* Pods-gyde-ios_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gyde-ios_Tests-Info.plist"; sourceTree = "<group>"; };
 		50380F281EC3EE769C85035CCEA77226 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		50B59ED2346FA1EE31A904E7889E8090 /* Pods-gyde-ios_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gyde-ios_Example-Info.plist"; sourceTree = "<group>"; };
 		549471CD1FE3A1E1865DD172864918D3 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		56006AA49A060CA2830F32CD6F394823 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		5611831ACD343F4F2BCB12BC64CEBE7E /* GydeWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeWebViewController.swift; sourceTree = "<group>"; };
 		56C9E80EC981EA7FE33AD93143CEFB2A /* Pods-gyde-ios_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gyde-ios_Example-dummy.m"; sourceTree = "<group>"; };
-		577DED496C259C59EB770AB5AC227334 /* ContentList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentList.swift; sourceTree = "<group>"; };
 		6262D6518DCF97F7A674B31054C08EE4 /* Pods-gyde-ios_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gyde-ios_Tests-umbrella.h"; sourceTree = "<group>"; };
 		66C5188AE61F0E667CD9E7ED28CDD61C /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		6A627585D057263528B0114E66ECEB26 /* StepsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepsManager.swift; path = "gyde-ios/Classes/StepsManager.swift"; sourceTree = "<group>"; };
 		6A9341666EAC154422A032092A7DC2D7 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		6D990E0FED5B41C1F13AC6B08208A99B /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		6EC6BFB654182E918526B9ACC4EB30ED /* Pods-gyde-ios_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gyde-ios_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,57 +163,51 @@
 		7AE00ECC24C5CC6DC938204FF42AD0E5 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		7C21E0C93A1141A1E2EB51575500E27D /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		7C2EC377264B25FB0E67D150E37E87CD /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		81104DB2ADD5E9145719C999028E3232 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8744112B7C442965DCC0C8910D41BE21 /* gyde-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "gyde-ios.modulemap"; sourceTree = "<group>"; };
-		8A8D6D4527E83326F5A8F0BF87F72FBD /* gyde-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "gyde-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		7F35D13A5C845B3A65B72E6028F18375 /* Steps.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		890C4319F56756C983127C7D516A3372 /* GydeLanguageSelectorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorView.swift; sourceTree = "<group>"; };
 		91164BE769DA144776663FBF46785561 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		9141B599373A9CCF36B4CB20BE483047 /* Pods-gyde-ios_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-gyde-ios_Example.modulemap"; sourceTree = "<group>"; };
 		91A53CAF547D71AEFABE49D91B4E6816 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		9716AD15FADF38A93170E034F2BCE457 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B44C88EAD1D2AAE0C40B4699A225CC3 /* HelpArticles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpArticles.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1CD432F32277BB93DEAADA626ECEC5B /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
-		A22F652627C8758B00116BE6 /* StepsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsManager.swift; sourceTree = "<group>"; };
-		A25EE70127A513BE00D2FEAC /* GydeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeCell.swift; sourceTree = "<group>"; };
-		A26A597027AE494B00733D9E /* GydeWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeWebViewController.swift; sourceTree = "<group>"; };
-		A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorView.swift; sourceTree = "<group>"; };
-		A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeLanguageSelectorCell.swift; sourceTree = "<group>"; };
-		A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeCalloutView.swift; sourceTree = "<group>"; };
-		A26ED9B327A5892100BAF0DF /* Appdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdata.swift; sourceTree = "<group>"; };
-		A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GydeWalkthroughPromptView.swift; sourceTree = "<group>"; };
 		A51E99894F75F00A281BE6A32FBDE495 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		A578C9411AC0303ACED2800881F00869 /* Pods-gyde-ios_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gyde-ios_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A7D358AA1606C7B2CDC8555485807E9E /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
+		A9A0D213ED49456837F73C046888E5F8 /* GydeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeView.swift; sourceTree = "<group>"; };
 		B1BBD4AF41B6E4B9FCC92772531F9271 /* Pods-gyde-ios_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gyde-ios_Tests-dummy.m"; sourceTree = "<group>"; };
+		B3F775487F3DDA671324AC94DFF4EFDC /* Walkthrough.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
 		B6724E600621756EE50A82EAC22532F9 /* Pods-gyde-ios_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-gyde-ios_Example"; path = Pods_gyde_ios_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FF646F4803BED959AC23E8CC8A9A64 /* GydeAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = GydeAssets.xcassets; path = "gyde-ios/Assets/GydeAssets.xcassets"; sourceTree = "<group>"; };
 		BD01BD44720DD817FCC2D0259B72950A /* gyde-ios-gyde-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "gyde-ios-gyde-ios"; path = "gyde-ios.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0BE9F3D55FDB29EF516F6D6B1B6BCA /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		C4861D7C4E73472F6FE2FC891B8D5565 /* gyde-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "gyde-ios-umbrella.h"; sourceTree = "<group>"; };
+		BE4ECA3C467CF91566F4F8161B9A229B /* GydeSDKWidgetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeSDKWidgetViewController.swift; sourceTree = "<group>"; };
+		C136727AF84D885D7E4006564E71A5EA /* gyde-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "gyde-ios.release.xcconfig"; sourceTree = "<group>"; };
 		C4A46A8054577838D49C60142EB88B13 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		C86CB4A03E9B0AB2A8D6301260D3A2A7 /* ResourceBundle-gyde-ios-gyde-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-gyde-ios-gyde-ios-Info.plist"; sourceTree = "<group>"; };
+		C93D951FEF5CFCB605347A7B4854DC7F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		CB1D9F6F4E2364DFAF158E04AF5D5EAA /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		CB6ECB3B0BEEA182302B5241F93B9BF2 /* GydeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeView.swift; sourceTree = "<group>"; };
+		CE7FD3C3B4E1AADC306406DC9D5C418D /* Flow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		D038D2FAA2F6B073D1B64B8635F4E3E6 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
-		D46085428580A61E39989561D4487902 /* gyde-ios.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "gyde-ios.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D4E066869A95E00B949CBA4D2284C35F /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		D779CA7E0C70183141F7059B638548F4 /* ResourceBundle-gyde-ios-gyde-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-gyde-ios-gyde-ios-Info.plist"; sourceTree = "<group>"; };
-		DA48A669AA4101CC307D73CFB887C29E /* Gyde.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gyde.swift; path = "gyde-ios/Classes/Gyde.swift"; sourceTree = "<group>"; };
+		DB224F22C4A177E5D575CC16EA801CEF /* gyde-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "gyde-ios-prefix.pch"; sourceTree = "<group>"; };
 		E031367551DAD2E68F632C84965B1368 /* Pods-gyde-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gyde-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E0AB256F23C70635518D0B60BF4E6927 /* Pods-gyde-ios_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-gyde-ios_Tests"; path = Pods_gyde_ios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13B89FFD81AACB7530769CA05EEA26B /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		E14A09DC3AD8CA84464FEC37F0FC99D1 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		E1C01768349B13CE21963A7AA85E8175 /* gyde-ios.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "gyde-ios.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E2C3B0B200350EAC8F42EF635FF31BD1 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		E42E0127D81EF83F142AE681022EDCF7 /* gyde-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "gyde-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E43F10DE451FED17810D9B5C237324A5 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		E49F482CF840B4B12CE0A8B6720668EE /* ContentList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentList.swift; sourceTree = "<group>"; };
 		E68A03E1722F232D9607BE438950E7C7 /* Pods-gyde-ios_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gyde-ios_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E7F0ABF28D5965CBEC5A5EC890BD28B4 /* GydeSDKWidgetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GydeSDKWidgetViewController.swift; sourceTree = "<group>"; };
-		E9A0805B6716683F7260BFEADDF2520C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EE9055CEA7890517265589BD23D73A49 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		F0BD95F32F2E57D6B9100B77B93F013C /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		F0C4659FEFD39B052EF632C925948C24 /* Pods-gyde-ios_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gyde-ios_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F44C5B72775F6AF0891BF331F32FE10D /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		F7AB9BB47A2175181386A432C07253AE /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		FADB4614F5AFD47029F04A9CEE0D555A /* Steps.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		F8110A6530EA70DBF0A772D8D0DB60E5 /* gyde-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "gyde-ios-Info.plist"; sourceTree = "<group>"; };
+		FC2C1F0853B2EDE8902BFF306C1110D7 /* gyde-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "gyde-ios-umbrella.h"; sourceTree = "<group>"; };
 		FED42C09993073194A0B60669A40AA96 /* gyde-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "gyde-ios"; path = gyde_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,19 +220,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		327B15C2AFC97DF99A5EFC34A16A3BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03C4874EAE9BB6E0CBE603B31601298E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40C5F7276AF8433EBDB5F90B21D8D560 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C15711D8B2889C1844B5B0DEE87FBAC8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		691C6FBEDE4BB7EAD8E99AB0D10825B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2801E2AE9FF0A0615BD6BC82E06539C1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF392A8C08B5DA3DA8134DCCF9AA3438 /* Frameworks */ = {
+		E90FFC9C93D274C375C637A0FFD5E38A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,19 +280,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		549FA4F1FAD80C0712C148A14435E024 /* gyde-ios */ = {
+		50AFB4E5B6A44151671EA300D8B0D21C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A26ED9B327A5892100BAF0DF /* Appdata.swift */,
-				DA48A669AA4101CC307D73CFB887C29E /* Gyde.swift */,
-				A22F652627C8758B00116BE6 /* StepsManager.swift */,
-				AE667071A1262AB9D18E63FC7FB9FCAB /* Models */,
-				E547B52416D5A0DE1A73EEFCB6CFDB35 /* Pod */,
-				F94536597131644B99E16BB781B82BF8 /* Support Files */,
-				6B8FC6B3C7FA9FBD4415788B99431CA9 /* Views */,
+				2ACA95FAEEC526EFF46E34977D01F97E /* gyde-ios.modulemap */,
+				3F9D60721B3E22C1CADB728A19839CB4 /* gyde-ios-dummy.m */,
+				F8110A6530EA70DBF0A772D8D0DB60E5 /* gyde-ios-Info.plist */,
+				DB224F22C4A177E5D575CC16EA801CEF /* gyde-ios-prefix.pch */,
+				FC2C1F0853B2EDE8902BFF306C1110D7 /* gyde-ios-umbrella.h */,
+				060154FF5A78596B29185D542CE55A8C /* gyde-ios.debug.xcconfig */,
+				C136727AF84D885D7E4006564E71A5EA /* gyde-ios.release.xcconfig */,
+				C86CB4A03E9B0AB2A8D6301260D3A2A7 /* ResourceBundle-gyde-ios-gyde-ios-Info.plist */,
 			);
-			name = "gyde-ios";
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/gyde-ios";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -301,17 +304,17 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6B8FC6B3C7FA9FBD4415788B99431CA9 /* Views */ = {
+		70FD7E0FD822AECAE2E72781BE44A325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E7F0ABF28D5965CBEC5A5EC890BD28B4 /* GydeSDKWidgetViewController.swift */,
-				CB6ECB3B0BEEA182302B5241F93B9BF2 /* GydeView.swift */,
-				A26A597027AE494B00733D9E /* GydeWebViewController.swift */,
-				A25EE70127A513BE00D2FEAC /* GydeCell.swift */,
-				A26A597227AF9E2300733D9E /* GydeLanguageSelectorView.swift */,
-				A26A597427AFAA5B00733D9E /* GydeLanguageSelectorCell.swift */,
-				A2F0974727C23CAC00380846 /* GydeWalkthroughPromptView.swift */,
-				A26CD19A27CA144A002DAC48 /* GydeCalloutView.swift */,
+				19618AAC3723299EBCBF1A1708C9C9EC /* GydeCalloutView.swift */,
+				4A58A8CE6BCC7F116AFBB8003CB15344 /* GydeCell.swift */,
+				2F0229D3E75CC736E40F45A62C64BEC2 /* GydeLanguageSelectorCell.swift */,
+				890C4319F56756C983127C7D516A3372 /* GydeLanguageSelectorView.swift */,
+				BE4ECA3C467CF91566F4F8161B9A229B /* GydeSDKWidgetViewController.swift */,
+				A9A0D213ED49456837F73C046888E5F8 /* GydeView.swift */,
+				32F23262CE1E6D96C288F791DE12A203 /* GydeWalkthroughPromptView.swift */,
+				5611831ACD343F4F2BCB12BC64CEBE7E /* GydeWebViewController.swift */,
 			);
 			name = Views;
 			path = "gyde-ios/Classes/Views";
@@ -358,6 +361,7 @@
 				6A9341666EAC154422A032092A7DC2D7 /* UILayoutSupport+Extensions.swift */,
 				843EFF0C650682C304D518A9092EE9FD /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -404,17 +408,12 @@
 			path = "Target Support Files/Pods-gyde-ios_Tests";
 			sourceTree = "<group>";
 		};
-		AE667071A1262AB9D18E63FC7FB9FCAB /* Models */ = {
+		B755837E083AEED579586D31DB36ED91 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				577DED496C259C59EB770AB5AC227334 /* ContentList.swift */,
-				2AFBCED2898C7E35ADD0575E3F175CE5 /* Flow.swift */,
-				9B44C88EAD1D2AAE0C40B4699A225CC3 /* HelpArticles.swift */,
-				FADB4614F5AFD47029F04A9CEE0D555A /* Steps.swift */,
-				121A44A88E58E3653603116328BC8B51 /* Walkthrough.swift */,
+				BC3BE77C53758F3BAB74F75AE28A7354 /* gyde-ios */,
 			);
-			name = Models;
-			path = "gyde-ios/Classes/Models";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BA22F08D059965C9A09F78196176CEDB /* Pods */ = {
@@ -425,19 +424,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C17DC676E2B7C3234E47E51EEE5EDECD /* Development Pods */ = {
+		BC3BE77C53758F3BAB74F75AE28A7354 /* gyde-ios */ = {
 			isa = PBXGroup;
 			children = (
-				549FA4F1FAD80C0712C148A14435E024 /* gyde-ios */,
+				10E117BC02EC2E824EE00A99220EF2F3 /* Appdata.swift */,
+				306008FA3A334A93B32A4321E48F0438 /* Gyde.swift */,
+				B6FF646F4803BED959AC23E8CC8A9A64 /* GydeAssets.xcassets */,
+				6A627585D057263528B0114E66ECEB26 /* StepsManager.swift */,
+				CC851CBA45229CC92D4D5789DCDEF483 /* Models */,
+				E763DBC74BC1B6B5A147CCCA34ACA0A5 /* Pod */,
+				50AFB4E5B6A44151671EA300D8B0D21C /* Support Files */,
+				70FD7E0FD822AECAE2E72781BE44A325 /* Views */,
 			);
-			name = "Development Pods";
+			name = "gyde-ios";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CC851CBA45229CC92D4D5789DCDEF483 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E49F482CF840B4B12CE0A8B6720668EE /* ContentList.swift */,
+				CE7FD3C3B4E1AADC306406DC9D5C418D /* Flow.swift */,
+				181AD3FC482CE9B67DC4F8B32E69DF01 /* HelpArticles.swift */,
+				7F35D13A5C845B3A65B72E6028F18375 /* Steps.swift */,
+				B3F775487F3DDA671324AC94DFF4EFDC /* Walkthrough.swift */,
+			);
+			name = Models;
+			path = "gyde-ios/Classes/Models";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				C17DC676E2B7C3234E47E51EEE5EDECD /* Development Pods */,
+				B755837E083AEED579586D31DB36ED91 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				BA22F08D059965C9A09F78196176CEDB /* Pods */,
 				9AC7DE4A8C3D6C523147243350AFFD9C /* Products */,
@@ -453,30 +473,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E547B52416D5A0DE1A73EEFCB6CFDB35 /* Pod */ = {
+		E763DBC74BC1B6B5A147CCCA34ACA0A5 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D46085428580A61E39989561D4487902 /* gyde-ios.podspec */,
-				81104DB2ADD5E9145719C999028E3232 /* LICENSE */,
-				E9A0805B6716683F7260BFEADDF2520C /* README.md */,
+				E1C01768349B13CE21963A7AA85E8175 /* gyde-ios.podspec */,
+				C93D951FEF5CFCB605347A7B4854DC7F /* LICENSE */,
+				46373E817C89EB0893367DDE2B1C8E11 /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		F94536597131644B99E16BB781B82BF8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8744112B7C442965DCC0C8910D41BE21 /* gyde-ios.modulemap */,
-				4A5E9045FB32A3B6950D1F546F085F99 /* gyde-ios-dummy.m */,
-				13BF4A477C5CE73DD7259156738733D1 /* gyde-ios-Info.plist */,
-				40688800F6FCD158782D9B00B468EF56 /* gyde-ios-prefix.pch */,
-				C4861D7C4E73472F6FE2FC891B8D5565 /* gyde-ios-umbrella.h */,
-				8A8D6D4527E83326F5A8F0BF87F72FBD /* gyde-ios.debug.xcconfig */,
-				E42E0127D81EF83F142AE681022EDCF7 /* gyde-ios.release.xcconfig */,
-				D779CA7E0C70183141F7059B638548F4 /* ResourceBundle-gyde-ios-gyde-ios-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/gyde-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,11 +502,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B12398299B50E12167FF5EABE4DBDB05 /* Headers */ = {
+		B71CE501369F3E021E839CA7FBC7E3A8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38D938C0227591D88D05AF89F60D04B /* gyde-ios-umbrella.h in Headers */,
+				EA913BF52A1F1BD6AD651EFF70C203E1 /* gyde-ios-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +551,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BDA170BAA34A3C8B600985303E8D2F0B /* PBXTargetDependency */,
+				2E0BA03F2D10F9D67102C47A6105C054 /* PBXTargetDependency */,
 			);
 			name = "Pods-gyde-ios_Tests";
 			productName = Pods_gyde_ios_Tests;
@@ -566,8 +570,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				845E28F7811F92BA92E7AD94B002FA85 /* PBXTargetDependency */,
-				584C0525CF2A865753EC6413343878D7 /* PBXTargetDependency */,
+				1DA110E86DF81F6614073F92F2489B03 /* PBXTargetDependency */,
+				FBF440BC8A2A3033A9CDA70E20BDCF5C /* PBXTargetDependency */,
 			);
 			name = "Pods-gyde-ios_Example";
 			productName = Pods_gyde_ios_Example;
@@ -576,11 +580,11 @@
 		};
 		DC519A06DC3535904CAE88180186CB82 /* gyde-ios-gyde-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28D06B914B746434FBA2B00A214EABD5 /* Build configuration list for PBXNativeTarget "gyde-ios-gyde-ios" */;
+			buildConfigurationList = E2A26F4CA4D06300968036174E5FCBB1 /* Build configuration list for PBXNativeTarget "gyde-ios-gyde-ios" */;
 			buildPhases = (
-				AE5EAD8B05557A63990F30FC89E74326 /* Sources */,
-				AF392A8C08B5DA3DA8134DCCF9AA3438 /* Frameworks */,
-				E57AA251009E78269712251197E075CA /* Resources */,
+				2EACB207CBFFA962696230D103F4A00A /* Sources */,
+				E90FFC9C93D274C375C637A0FFD5E38A /* Frameworks */,
+				47B40C8FD4D917A40BAE73C502790EB4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -593,18 +597,18 @@
 		};
 		E23BB5AD8B9B9F7BB78A652B05E3BDFB /* gyde-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6392CB1660FAFDB1C25C97F85712D11E /* Build configuration list for PBXNativeTarget "gyde-ios" */;
+			buildConfigurationList = C9C79E933CBAA5EC23EB8DDE4704727E /* Build configuration list for PBXNativeTarget "gyde-ios" */;
 			buildPhases = (
-				B12398299B50E12167FF5EABE4DBDB05 /* Headers */,
-				5B8BB9B07407F86A31F9FD868D8B6FC5 /* Sources */,
-				691C6FBEDE4BB7EAD8E99AB0D10825B2 /* Frameworks */,
-				4A1E1C2BED538E796639BC978F57DE7E /* Resources */,
+				B71CE501369F3E021E839CA7FBC7E3A8 /* Headers */,
+				257D8D9E9F6409FDB66369F8EA162C26 /* Sources */,
+				327B15C2AFC97DF99A5EFC34A16A3BB3 /* Frameworks */,
+				7FBE91E43E180DB89886E66A46FCEAE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7D85980F77280CF3E03D67D096B1EF69 /* PBXTargetDependency */,
-				0BA1368E37FDD586C8085A2A8558E4CB /* PBXTargetDependency */,
+				420CCE90A94B32B058A3B0D8066D2A0C /* PBXTargetDependency */,
+				F46E00F319FD9608403551D129D10068 /* PBXTargetDependency */,
 			);
 			name = "gyde-ios";
 			productName = gyde_ios;
@@ -657,22 +661,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A1E1C2BED538E796639BC978F57DE7E /* Resources */ = {
+		47B40C8FD4D917A40BAE73C502790EB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E517665ECD9F9C842FDD2D846DACF2 /* gyde-ios-gyde-ios in Resources */,
+				790C12E21F801EE22B7E151EDD23736B /* GydeAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBE91E43E180DB89886E66A46FCEAE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E3F1FF245C3CF9D60C10A7ADBEBF76 /* gyde-ios-gyde-ios in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DBFBC99C6F5D9B1D57CC9D1C6E9209EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E57AA251009E78269712251197E075CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -734,6 +739,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		257D8D9E9F6409FDB66369F8EA162C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354750764D8D13001FE0B386C2B86DA0 /* Appdata.swift in Sources */,
+				E8249B49D80228346CBF38471E7449AD /* ContentList.swift in Sources */,
+				CE60468857969785B8F4D314002F0340 /* Flow.swift in Sources */,
+				38B00F0BA08574D42007A6B06D6431A9 /* Gyde.swift in Sources */,
+				1C8CABD2D1549CB8D7629D2227449662 /* gyde-ios-dummy.m in Sources */,
+				3A400A3DA731466A1226A598F8E31BF4 /* GydeCalloutView.swift in Sources */,
+				E176F38E3D934EFD3449A4EE24704122 /* GydeCell.swift in Sources */,
+				CC457708AD3D1925C2AAF736AD27B610 /* GydeLanguageSelectorCell.swift in Sources */,
+				2625B40EB888ED04183F15B1AE7284E2 /* GydeLanguageSelectorView.swift in Sources */,
+				49B95C1C40268B7FE6F6686A5D9DDF70 /* GydeSDKWidgetViewController.swift in Sources */,
+				6FC2E17CAD2E457D4BE040597ACD76B1 /* GydeView.swift in Sources */,
+				4AEE2D0D168AD721833558D643629F0F /* GydeWalkthroughPromptView.swift in Sources */,
+				F98A89C703DBC11DB8C3E42B9B51EE17 /* GydeWebViewController.swift in Sources */,
+				9A1566F2814D94C14CDE93F9F84B4CE4 /* HelpArticles.swift in Sources */,
+				81504FA1119B8B61C5F6D5387B9D3F8D /* Steps.swift in Sources */,
+				721D44A2252ADDD9BBD69DADCB485C1F /* StepsManager.swift in Sources */,
+				EF0ECA1173322B4862EB75904B55F750 /* Walkthrough.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EACB207CBFFA962696230D103F4A00A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		450DAAD0F857A8C3599716A494320DB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -742,69 +778,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B8BB9B07407F86A31F9FD868D8B6FC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A26A597127AE494B00733D9E /* GydeWebViewController.swift in Sources */,
-				8390012B76D0FE4CB9072A1DE9EA2306 /* ContentList.swift in Sources */,
-				A26ED9B427A5892100BAF0DF /* Appdata.swift in Sources */,
-				A2F0974827C23CAC00380846 /* GydeWalkthroughPromptView.swift in Sources */,
-				A26A597327AF9E2300733D9E /* GydeLanguageSelectorView.swift in Sources */,
-				B0D5911A8E0F48ABB158BC574DB437F9 /* Flow.swift in Sources */,
-				367A1BC2D27483C5EA0CCC5E29E1D120 /* Gyde.swift in Sources */,
-				A22F652727C8758B00116BE6 /* StepsManager.swift in Sources */,
-				A26CD19B27CA144A002DAC48 /* GydeCalloutView.swift in Sources */,
-				2F084CE1BA72C5E4957BA6F85CEBCE07 /* gyde-ios-dummy.m in Sources */,
-				BA0D2F6CE44A5DCF33931FF81B60A110 /* GydeSDKWidgetViewController.swift in Sources */,
-				A8086364041082C9F5856A1252DE5BFE /* GydeView.swift in Sources */,
-				C2D813810CE8E25D86C688B17F6CE87E /* HelpArticles.swift in Sources */,
-				443653DFAF67919A18BFCC884F8B66FC /* Steps.swift in Sources */,
-				A25EE70227A513BE00D2FEAC /* GydeCell.swift in Sources */,
-				7169C4233C86D565B37A07C0D7DE7233 /* Walkthrough.swift in Sources */,
-				A26A597527AFAA5B00733D9E /* GydeLanguageSelectorCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE5EAD8B05557A63990F30FC89E74326 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0BA1368E37FDD586C8085A2A8558E4CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "gyde-ios-gyde-ios";
-			target = DC519A06DC3535904CAE88180186CB82 /* gyde-ios-gyde-ios */;
-			targetProxy = 1D81C68EF673CB07E33CFD6D4AC2D360 /* PBXContainerItemProxy */;
-		};
-		584C0525CF2A865753EC6413343878D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "gyde-ios";
-			target = E23BB5AD8B9B9F7BB78A652B05E3BDFB /* gyde-ios */;
-			targetProxy = A86331165C558A5E092862DEE1BB547C /* PBXContainerItemProxy */;
-		};
-		7D85980F77280CF3E03D67D096B1EF69 /* PBXTargetDependency */ = {
+		1DA110E86DF81F6614073F92F2489B03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
-			targetProxy = 3ECF8EBE45A02FDEA336D0B142D6F315 /* PBXContainerItemProxy */;
+			targetProxy = BB9276F6EBD27CB4211289FD06BFA35C /* PBXContainerItemProxy */;
 		};
-		845E28F7811F92BA92E7AD94B002FA85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
-			targetProxy = 81577F58A0EE579EFB90A17688BDDBD8 /* PBXContainerItemProxy */;
-		};
-		BDA170BAA34A3C8B600985303E8D2F0B /* PBXTargetDependency */ = {
+		2E0BA03F2D10F9D67102C47A6105C054 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-gyde-ios_Example";
 			target = BF213667E6093C781DD1FDEF32BA7CCA /* Pods-gyde-ios_Example */;
-			targetProxy = 884B8FE1C9A02FDA740BB75CC685EF58 /* PBXContainerItemProxy */;
+			targetProxy = DA5206B6B6836D8B602866455BB92777 /* PBXContainerItemProxy */;
+		};
+		420CCE90A94B32B058A3B0D8066D2A0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = C360904DF7344AB0B7E8EEEAC9F99D4B /* PBXContainerItemProxy */;
+		};
+		F46E00F319FD9608403551D129D10068 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "gyde-ios-gyde-ios";
+			target = DC519A06DC3535904CAE88180186CB82 /* gyde-ios-gyde-ios */;
+			targetProxy = A645EB8C6EE6B6B13CFE9FED906F75E6 /* PBXContainerItemProxy */;
+		};
+		FBF440BC8A2A3033A9CDA70E20BDCF5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "gyde-ios";
+			target = E23BB5AD8B9B9F7BB78A652B05E3BDFB /* gyde-ios */;
+			targetProxy = 0A5E000F8424A7E69C0451358EC2112A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -910,22 +915,6 @@
 			};
 			name = Debug;
 		};
-		4078C91847B86907D8ACF5A4C6EEC70C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A8D6D4527E83326F5A8F0BF87F72FBD /* gyde-ios.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gyde-ios";
-				IBSC_MODULE = gyde_ios;
-				INFOPLIST_FILE = "Target Support Files/gyde-ios/ResourceBundle-gyde-ios-gyde-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = "gyde-ios";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		4827A46E863C1C61FEFBAE7508A07252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C21E0C93A1141A1E2EB51575500E27D /* SnapKit.debug.xcconfig */;
@@ -957,22 +946,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		4A3D8C0C3EC68F68EA30A911C02D7466 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E42E0127D81EF83F142AE681022EDCF7 /* gyde-ios.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gyde-ios";
-				IBSC_MODULE = gyde_ios;
-				INFOPLIST_FILE = "Target Support Files/gyde-ios/ResourceBundle-gyde-ios-gyde-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = "gyde-ios";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
 		};
 		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1040,6 +1013,38 @@
 			};
 			name = Debug;
 		};
+		5641189A950300200394B78A617AE2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C136727AF84D885D7E4006564E71A5EA /* gyde-ios.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/gyde-ios/gyde-ios-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/gyde-ios/gyde-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/gyde-ios/gyde-ios.modulemap";
+				PRODUCT_MODULE_NAME = gyde_ios;
+				PRODUCT_NAME = gyde_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1095,15 +1100,32 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		9B1C89414EA487E5224EC58B12896786 /* Debug */ = {
+		8E51A1E37EDE8B4DA9D9157D32A10E77 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A8D6D4527E83326F5A8F0BF87F72FBD /* gyde-ios.debug.xcconfig */;
+			baseConfigurationReference = C136727AF84D885D7E4006564E71A5EA /* gyde-ios.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gyde-ios";
+				IBSC_MODULE = gyde_ios;
+				INFOPLIST_FILE = "Target Support Files/gyde-ios/ResourceBundle-gyde-ios-gyde-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "gyde-ios";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		A753319D4633864277A41941CD14A193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 060154FF5A78596B29185D542CE55A8C /* gyde-ios.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1131,38 +1153,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		9D4F9A0F5A8875C0D6872557DE3035C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E42E0127D81EF83F142AE681022EDCF7 /* gyde-ios.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/gyde-ios/gyde-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/gyde-ios/gyde-ios-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/gyde-ios/gyde-ios.modulemap";
-				PRODUCT_MODULE_NAME = gyde_ios;
-				PRODUCT_NAME = gyde_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		BF0CB1FD27363F4A0C2C8D03F7371F79 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1198,6 +1188,22 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		D5AB4983BFA9AB9945FE85F8653D2A62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 060154FF5A78596B29185D542CE55A8C /* gyde-ios.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gyde-ios";
+				IBSC_MODULE = gyde_ios;
+				INFOPLIST_FILE = "Target Support Files/gyde-ios/ResourceBundle-gyde-ios-gyde-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "gyde-ios";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		E4613BD23C6C5DCAB03FEA9DB36156C2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1237,15 +1243,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28D06B914B746434FBA2B00A214EABD5 /* Build configuration list for PBXNativeTarget "gyde-ios-gyde-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4078C91847B86907D8ACF5A4C6EEC70C /* Debug */,
-				4A3D8C0C3EC68F68EA30A911C02D7466 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1264,15 +1261,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6392CB1660FAFDB1C25C97F85712D11E /* Build configuration list for PBXNativeTarget "gyde-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B1C89414EA487E5224EC58B12896786 /* Debug */,
-				9D4F9A0F5A8875C0D6872557DE3035C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A196D9115E7365E922541735DB6C4E7C /* Build configuration list for PBXNativeTarget "Pods-gyde-ios_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1287,6 +1275,24 @@
 			buildConfigurations = (
 				09B3DB24EF92601C26054B7B33D2A1C0 /* Debug */,
 				E4613BD23C6C5DCAB03FEA9DB36156C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9C79E933CBAA5EC23EB8DDE4704727E /* Build configuration list for PBXNativeTarget "gyde-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A753319D4633864277A41941CD14A193 /* Debug */,
+				5641189A950300200394B78A617AE2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2A26F4CA4D06300968036174E5FCBB1 /* Build configuration list for PBXNativeTarget "gyde-ios-gyde-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5AB4983BFA9AB9945FE85F8653D2A62 /* Debug */,
+				8E51A1E37EDE8B4DA9D9157D32A10E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

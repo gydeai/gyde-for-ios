@@ -7,22 +7,28 @@
 
 import Foundation
 
-protocol StepsDelegate {
+protocol StepsDelegate: AnyObject {
     func executeStep(_ step: Steps)
 }
 
 class StepsManager {
 
-    var delegate: StepsDelegate? {
+    weak var delegate: StepsDelegate? {
         didSet {
             executeFlow()
         }
     }
     
     var steps = [Steps]()
+    var count = 0
 
     init(steps: [Steps]) {
         self.steps = steps
+        for step in steps {
+            if step.stepDescription == StepDescription.showToolTip.rawValue {
+                count += 1
+            }
+        }
     }
     
     func executeFlow() {

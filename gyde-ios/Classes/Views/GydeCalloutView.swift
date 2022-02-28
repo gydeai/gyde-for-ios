@@ -44,6 +44,12 @@ class GydeCalloutView: UIView {
     var subtitle: String!
     var audioURL: String?
     
+    var lastStep = false {
+        didSet {
+            nextButton.setTitle(lastStep ? "Done" : "Next", for: .normal)
+        }
+    }
+    
     func getPosition() -> CallOutPosition {
         if let position = position {
             let pos = position.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: " ", with: "")
@@ -62,6 +68,14 @@ class GydeCalloutView: UIView {
             
             if pos == "topcenter" {
                 return .topCenter
+            }
+            
+            if pos == "topleft" {
+                return .topLeft
+            }
+            
+            if pos == "topright" {
+                return .topRight
             }
             
             if pos == "left" {
@@ -106,6 +120,8 @@ class GydeCalloutView: UIView {
         super.layoutSubviews()
         if getPosition() == .bottomCenter {
             self.setUpTriangle()
+        } else if getPosition() == .topLeft {
+            self.setDownTriangle()
         }
     }
     
@@ -123,6 +139,9 @@ class GydeCalloutView: UIView {
             if position == .bottomCenter {
                 make.centerX.equalTo(self)
                 make.top.equalTo(currFrame.midY)
+            } else if position == .topLeft {
+                make.left.equalTo(self).offset(currFrame.origin.x)
+                make.top.equalTo(currFrame.origin.y)
             }
         }
     
@@ -137,12 +156,15 @@ class GydeCalloutView: UIView {
             if position == .bottomCenter {
                 make.centerX.equalTo(self)
                 make.top.equalTo(self.triangleView.snp.bottom)
+            } else if position == .topLeft {
+                make.left.equalTo(self.triangleView)
+                make.bottom.equalTo(self.triangleView.snp.top)
             }
         }
         
         titleLabel.text = title
-        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        titleLabel.textColor = .purple
+        titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
+        titleLabel.textColor = .systemIndigo
         titleLabel.numberOfLines = 0
         containerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -152,7 +174,7 @@ class GydeCalloutView: UIView {
         }
         
         subtitleLabel.text = subtitle
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        subtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 12)
         subtitleLabel.numberOfLines = 2
         subtitleLabel.adjustsFontSizeToFitWidth = true
         subtitleLabel.minimumScaleFactor = 0.5
@@ -185,12 +207,10 @@ class GydeCalloutView: UIView {
             make.width.height.equalTo(24)
         }
         
-        let nextButton = UIButton()
         nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
-        nextButton.backgroundColor = .purple
+        nextButton.backgroundColor = .systemIndigo
         nextButton.setTitleColor(UIColor.white, for: .normal)
-        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 12)
         nextButton.layer.cornerRadius = 15
         containerView.addSubview(nextButton)
         nextButton.snp.makeConstraints { make in

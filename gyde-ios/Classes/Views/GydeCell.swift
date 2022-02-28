@@ -29,7 +29,7 @@ class GydeCell: UITableViewCell {
             make.right.bottom.equalTo(self.contentView).offset(-10)
         }
         
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
         titleLabel.numberOfLines = 2
         titleLabel.lineBreakMode = .byWordWrapping
         containerView.addSubview(titleLabel)
@@ -40,7 +40,7 @@ class GydeCell: UITableViewCell {
         }
         
         detailImageView.image = UIImage(systemName: "eye")
-        detailImageView.tintColor = UIColor.purple
+        detailImageView.tintColor = UIColor.systemIndigo
         containerView.addSubview(detailImageView)
         detailImageView.snp.makeConstraints { make in
             make.left.equalTo(titleLabel)
@@ -49,8 +49,8 @@ class GydeCell: UITableViewCell {
         }
         
         subtitleLabel.text = "Guide me"
-        subtitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        subtitleLabel.textColor = UIColor.purple
+        subtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 13)
+        subtitleLabel.textColor = UIColor.systemIndigo
         containerView.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(detailImageView)

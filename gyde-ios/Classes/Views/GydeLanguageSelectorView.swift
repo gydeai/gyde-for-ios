@@ -62,7 +62,7 @@ class GydeLanguageSelectorView: UIView {
         
         let headerLabel = UILabel()
         headerLabel.text = "Select your preferred language"
-        headerLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        headerLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
         containerView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { make in
             make.top.equalTo(containerView).offset(15)
@@ -71,9 +71,9 @@ class GydeLanguageSelectorView: UIView {
 
         let selectButton = UIButton()
         selectButton.addTarget(self, action: #selector(selectAction), for: .touchUpInside)
-        selectButton.backgroundColor = .purple
+        selectButton.backgroundColor = .systemIndigo
         selectButton.setTitleColor(UIColor.white, for: .normal)
-        selectButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        selectButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 14)
         selectButton.setTitle("Select", for: .normal)
         selectButton.layer.cornerRadius = 15
         containerView.addSubview(selectButton)
@@ -87,12 +87,12 @@ class GydeLanguageSelectorView: UIView {
         let cancelButton = UIButton()
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         cancelButton.backgroundColor = .white
-        cancelButton.setTitleColor(UIColor.purple, for: .normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        cancelButton.setTitleColor(UIColor.systemIndigo, for: .normal)
+        cancelButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 14)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.layer.cornerRadius = 15
         cancelButton.layer.borderWidth = 1
-        cancelButton.layer.borderColor = UIColor.purple.cgColor
+        cancelButton.layer.borderColor = UIColor.systemIndigo.cgColor
         containerView.addSubview(cancelButton)
         cancelButton.snp.makeConstraints { make in
             make.bottom.equalTo(containerView).offset(-15)
@@ -139,7 +139,7 @@ extension GydeLanguageSelectorView: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.selectedView.alpha = self.selectedIndexPath == indexPath ? 1 : 0
-        cell.selectedButton.layer.borderColor = self.selectedIndexPath == indexPath ? UIColor.purple.cgColor : UIColor.lightGray.cgColor
+        cell.selectedButton.layer.borderColor = self.selectedIndexPath == indexPath ? UIColor.systemIndigo.cgColor : UIColor.lightGray.cgColor
         cell.titleLabel.text = self.contentList.languageOptions[indexPath.row]
         
         return cell

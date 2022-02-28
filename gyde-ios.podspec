@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
     'SWIFT_VERSION' =>'5.3'
   }
   s.resource_bundles = {
-   'gyde-ios' => ['HVCamera/Swift/Assets/**/*']
+   'gyde-ios' => ['gyde-ios/Assets/**/*']
   }
   
    s.dependency 'SnapKit'
