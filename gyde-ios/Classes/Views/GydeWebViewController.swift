@@ -57,9 +57,11 @@ class GydeWebViewController: UIViewController {
             make.top.equalTo(headerView.snp.bottom)
         }
         
-        if let url = URL(string: urlString) {
-            let urlRequest = URLRequest(url: url)
+        if let encodedURL = urlString.getCleanedURL() {
+            let urlRequest = URLRequest(url: encodedURL)
             webView.load(urlRequest)
+        } else {
+           print("invalid url ")
         }
     }
     
@@ -73,4 +75,20 @@ extension GydeWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
        print("didFinish")
    }
+}
+
+extension String {
+ func getCleanedURL() -> URL? {
+    guard self.isEmpty == false else {
+        return nil
+    }
+    if let url = URL(string: self) {
+        return url
+    } else {
+        if let urlEscapedString = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) , let escapedURL = URL(string: urlEscapedString){
+            return escapedURL
+        }
+    }
+    return nil
+ }
 }

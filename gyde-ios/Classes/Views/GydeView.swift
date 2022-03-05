@@ -42,6 +42,7 @@ public class GydeView: UIView {
     let languageSelectorButton = UIButton()
     let languageSelectorView = GydeLanguageSelectorView()
     let walkthroughPromptView = GydeWalkthroughPromptView()
+    let noContentLabel = UILabel()
     
     var filteredWalkthroughs = [Walkthrough]()
     var filteredHelpArticles = [HelpArticles]()
@@ -177,10 +178,35 @@ public class GydeView: UIView {
             make.left.right.top.bottom.equalTo(self)
         }
         
+        noContentLabel.text = "Searched content not available"
+        noContentLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
+        noContentLabel.textColor = UIColor.darkGray
+        noContentLabel.alpha = 0
+        self.insertSubview(noContentLabel, aboveSubview: tableView)
+        noContentLabel.snp.makeConstraints { make in
+            make.center.equalTo(tableView)
+        }
+        
         languageSelectorView.dismissBlock = { [unowned self] in
-            self.filteredWalkthroughs = contentList.currentLanguageWalkthroughs()
-            self.filteredHelpArticles = contentList.currentHelpArticles()
-            self.tableView.reloadData()
+            noContentLabel.alpha = 0
+            if segmentedControl.selectedSegmentIndex == 0 {
+                self.filteredWalkthroughs = contentList.currentLanguageWalkthroughs()
+                if !self.filteredWalkthroughs.isEmpty {
+                } else {
+                    noContentLabel.alpha = 1
+                }
+                self.tableView.reloadData()
+            }
+            
+            if segmentedControl.selectedSegmentIndex == 1 {
+                self.filteredHelpArticles = contentList.currentHelpArticles()
+                if !self.filteredHelpArticles.isEmpty {
+                } else {
+                    noContentLabel.alpha = 1
+                }
+                self.tableView.reloadData()
+            }
+            
             UIView.animate(withDuration: 0.33) {
                 self.languageSelectorView.alpha = 0
             }
@@ -236,10 +262,24 @@ public class GydeView: UIView {
     }
     
     @objc func segmentChanged() {
+        noContentLabel.alpha = 0
         self.searchTextField.resignFirstResponder()
         self.searchTextField.text = nil
         filteredWalkthroughs = contentList.currentLanguageWalkthroughs()
         filteredHelpArticles = contentList.currentHelpArticles()
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            if filteredWalkthroughs.isEmpty {
+                noContentLabel.alpha = 1
+            }
+        }
+        
+        if segmentedControl.selectedSegmentIndex == 1 {
+            if filteredHelpArticles.isEmpty {
+                noContentLabel.alpha = 1
+            }
+        }
+        
         self.tableView.reloadData()
     }
     

@@ -178,9 +178,8 @@ extension Gyde: StepsDelegate {
                     } completion: { _ in
                         calloutView?.removeFromSuperview()
                         calloutView = nil
-                        self.steps?.steps.removeFirst()
+                        self.steps?.steps.removeAll()
                         self.steps?.count = 0
-                        self.steps?.executeFlow()
                     }
                 }
                 
