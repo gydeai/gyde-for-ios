@@ -10,12 +10,19 @@ import UIKit
 
 class AddNewCandidateViewController: UIViewController {
 
+    @IBOutlet weak var enterCandidateNameTextField: UITextField!
+    @IBOutlet weak var enterCandidatePhoneNumberTextField: UITextField!
+    @IBOutlet weak var designationTextField: UITextField!
+    @IBOutlet weak var resumeTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 6
-        
+        enterCandidateNameTextField.delegate = self
+        enterCandidatePhoneNumberTextField.delegate = self
+        designationTextField.delegate = self
+        resumeTextField.delegate = self
         let backButton = UIButton()
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
@@ -42,4 +49,25 @@ class AddNewCandidateViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension AddNewCandidateViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == resumeTextField {
+            return false
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == resumeTextField {
+            UIApplication.shared.open(URL(string:"photos-redirect://")!)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

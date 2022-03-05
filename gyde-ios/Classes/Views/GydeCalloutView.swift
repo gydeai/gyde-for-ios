@@ -116,6 +116,12 @@ class GydeCalloutView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let result = super.hitTest(point, with: event)
+        if result == self { return nil }
+        return result
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         if getPosition() == .bottomCenter {
