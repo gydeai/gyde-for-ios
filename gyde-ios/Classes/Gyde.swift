@@ -15,6 +15,10 @@ public class Gyde {
     
     private var contentList: ContentList?
     
+    ///stage-app.gyde.ai:- Staging
+    ///app.gyde.ai:- Prod
+    private var baseURL = "stage-app.gyde.ai"
+    
     public var currentViewController: UIViewController?
     
     private var sdkBundle: Bundle {
@@ -50,6 +54,7 @@ public class Gyde {
             }
             
             print(list)
+            print("LOADED")
             self?.contentList = list
             completion(nil)
             
@@ -65,23 +70,27 @@ public class Gyde {
         let vc = GydeSDKWidgetViewController()
         vc.contentList = list
         vc.walkthroughStart = { [unowned self] flowId in
-            // Get Button Flow
-            self.getButtonFlow(appId: appId, flowId: flowId) { flow in
-                guard let flow = flow else {
-                    return
-                }
-
-                self.steps = StepsManager(steps: flow.steps)
-                self.steps?.delegate = self
-            }
+            self.executeButtonFlow(flowId: flowId)
         }
         mainVC.present(vc, animated: true, completion: nil)
+    }
+    
+    public func executeButtonFlow(flowId: String) {
+        // Get Button Flow
+        self.getButtonFlow(appId: appId, flowId: flowId) { flow in
+            guard let flow = flow else {
+                return
+            }
+
+            self.steps = StepsManager(steps: flow.steps)
+            self.steps?.delegate = self
+        }
     }
     
     // MARK: Internal
     
     func getContentList(appId: String, completion: @escaping (ContentList?) -> Void) {
-        let url = URL(string: "https://stage-app.gyde.ai/android/getContentList")!
+        let url = URL(string: "https://\(baseURL)/android/getContentList")!
         let parameterDictionary = ["appId": appId]
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -107,7 +116,7 @@ public class Gyde {
     }
     
     func getButtonFlow(appId: String, flowId: String, completion: @escaping (Flow?) -> Void) {
-        let url = URL(string: "https://stage-app.gyde.ai/android/getFlowJsonForBtn")!
+        let url = URL(string: "https://\(baseURL)/android/getFlowJsonForBtn")!
         let parameterDictionary = ["appId": appId, "flowId": flowId]
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

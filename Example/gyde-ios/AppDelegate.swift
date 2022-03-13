@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import gyde_ios
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var loaded = false
+    let appId = "7aefb676-4ca2-4087-b360-274710b0411e"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setup { err in
+            guard err == nil else {
+                print("Error")
+                return
+            }
+            print("Loaded app delegate")
+        }
         return true
     }
 
@@ -41,17 +50,86 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
-}
-
-extension UIStoryboard {
-    func instantiateVC(withIdentifier identifier: String) -> UIViewController? {
-        // "identifierToNibNameMap" – dont change it. It is a key for searching IDs
-        if let identifiersList = self.value(forKey: "identifierToNibNameMap") as? [String: Any] {
-            if identifiersList[identifier] != nil {
-                return self.instantiateViewController(withIdentifier: identifier)
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        print("url \(url.components)")
+        if let urlComponents = url.components,
+            let flowId = urlComponents.queryItems?["flowId"] {
+            if !loaded {
+                setup { error in
+                    guard error == nil else {
+                        return
+                    }
+                    
+                    Gyde.sharedInstance.executeButtonFlow(flowId: flowId)
+                }
+            } else {
+                Gyde.sharedInstance.executeButtonFlow(flowId: flowId)
             }
         }
-        return nil
+        return true
+    }
+
+    func setup(completion: @escaping (Error?) -> Void) {
+        Gyde.sharedInstance.delegate = self
+        Gyde.sharedInstance.setup(appId: appId) { error in
+            guard error == nil else {
+                self.loaded = false
+                completion(error)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.loaded = true
+                if let topViewController = UIApplication.topViewController() {
+                    Gyde.sharedInstance.currentViewController = topViewController
+                }
+                completion(nil)
+            }
+        }
+    }
+}
+
+extension URL {
+    var components: URLComponents? {
+        return URLComponents(url: self, resolvingAgainstBaseURL: false)
+    }
+}
+
+extension Array where Iterator.Element == URLQueryItem {
+    subscript(_ key: String) -> String? {
+        return first(where: { $0.name == key })?.value
+    }
+}
+
+extension AppDelegate: GydeDelegate {
+
+    func navigate(step: Steps, completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            if let topController = UIApplication.topViewController() {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: step.screenName)
+                if type(of: topController) != type(of: vc) {
+                    Gyde.sharedInstance.currentViewController = vc
+                    topController.navigationController?.pushViewController(vc, animated: true)
+                }
+                completion()
+            }
+        }
+    }
+}
+
+extension UIApplication {
+    class func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!.rootViewController) -> UIViewController? {
+        if let navigationController = controller as? UINavigationController {
+            return topViewController(controller: navigationController.visibleViewController)
+        }
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topViewController(controller: selected)
+            }
+        }
+        if let presented = controller?.presentedViewController {
+            return topViewController(controller: presented)
+        }
+        return controller
     }
 }

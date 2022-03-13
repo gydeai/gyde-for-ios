@@ -1,13 +1,16 @@
 PODS:
+  - Branch (1.41.0)
   - gyde-ios (0.1.0):
     - SnapKit
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Branch
   - gyde-ios (from `../`)
 
 SPEC REPOS:
   trunk:
+    - Branch
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -15,9 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Branch: bd6c472d6cab03206877ac86c1241327a3f217d1
   gyde-ios: b270bfc8e7a62a75a0bf4fd02734a544172524ea
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 0624c04ee81db60de7d8b402e8eff4e782294ba7
+PODFILE CHECKSUM: 331c512fc52e2c41fc528ca7ec09f807ae029e49
 
 COCOAPODS: 1.11.2

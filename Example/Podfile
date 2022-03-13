@@ -4,6 +4,7 @@ platform :ios, '14.0'
 
 target 'gyde-ios_Example' do
   pod 'gyde-ios', :path => '../'
+  pod 'Branch'
 
   target 'gyde-ios_Tests' do
     inherit! :search_paths

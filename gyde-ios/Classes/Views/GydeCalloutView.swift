@@ -193,7 +193,7 @@ class GydeCalloutView: UIView {
         
         closeButton.setImage(UIImage(systemName: "x.circle.fill"), for: .normal)
         closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
-        closeButton.tintColor = AppData.sharedInstance.headerColor
+        closeButton.tintColor = AppData.sharedInstance.headerColor ?? .systemIndigo
         containerView.addSubview(closeButton)
         closeButton.snp.makeConstraints { make in
             make.top.equalTo(containerView).offset(10)
@@ -203,7 +203,7 @@ class GydeCalloutView: UIView {
         
         
         audioButton.addTarget(self, action: #selector(audioAction), for: .touchUpInside)
-        audioButton.tintColor = AppData.sharedInstance.headerColor
+        audioButton.tintColor = AppData.sharedInstance.headerColor ?? .systemIndigo
         audioButton.setImage(UIImage(systemName: "volume.slash.fill"), for: .normal)
         audioButton.setImage(UIImage(systemName: "volume.2.fill"), for: .selected)
         containerView.addSubview(audioButton)
