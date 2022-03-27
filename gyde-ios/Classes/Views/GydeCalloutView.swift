@@ -44,6 +44,9 @@ class GydeCalloutView: UIView {
     var subtitle: String!
     var audioURL: String?
     
+    let calloutWidth = 240
+    let calloutHeight = 160
+    
     var lastStep = false {
         didSet {
             nextButton.setTitle(lastStep ? "Done" : "Next", for: .normal)
@@ -124,9 +127,9 @@ class GydeCalloutView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if getPosition() == .bottomCenter {
+        if getPosition() == .bottomCenter || getPosition() == .bottomLeft || getPosition() == .bottomRight {
             self.setUpTriangle()
-        } else if getPosition() == .topLeft {
+        } else if getPosition() == .topLeft || getPosition() == .topCenter || getPosition() == .topRight {
             self.setDownTriangle()
         }
     }
@@ -145,8 +148,20 @@ class GydeCalloutView: UIView {
             if position == .bottomCenter {
                 make.centerX.equalTo(self)
                 make.top.equalTo(currFrame.midY)
+            } else if position == .bottomLeft {
+                make.left.equalTo(self).offset((calloutWidth / 2) - 10)
+                make.top.equalTo(currFrame.midY)
+            } else if position == .bottomRight {
+                make.right.equalTo(self).offset(-(calloutWidth / 2) - 10)
+                make.top.equalTo(currFrame.midY)
             } else if position == .topLeft {
                 make.left.equalTo(self).offset(currFrame.origin.x)
+                make.top.equalTo(currFrame.origin.y)
+            } else if position == .topCenter {
+                make.centerX.equalTo(self)
+                make.top.equalTo(currFrame.midY)
+            } else if position == .topRight {
+                make.right.equalTo(self).offset(-currFrame.origin.x)
                 make.top.equalTo(currFrame.origin.y)
             }
         }
@@ -157,13 +172,25 @@ class GydeCalloutView: UIView {
         containerView.dropShadow()
         self.addSubview(self.containerView)
         self.containerView.snp.makeConstraints { make in
-            make.height.equalTo(160)
-            make.width.equalTo(240)
+            make.height.equalTo(calloutHeight)
+            make.width.equalTo(calloutWidth)
             if position == .bottomCenter {
                 make.centerX.equalTo(self)
                 make.top.equalTo(self.triangleView.snp.bottom)
+            } else if position == .bottomLeft {
+                make.left.equalTo(self)
+                make.top.equalTo(self.triangleView.snp.bottom)
+            } else if position == .bottomRight {
+                make.right.equalTo(self)
+                make.top.equalTo(self.triangleView.snp.bottom)
             } else if position == .topLeft {
                 make.left.equalTo(self.triangleView)
+                make.bottom.equalTo(self.triangleView.snp.top)
+            } else if position == .topCenter {
+                make.centerX.equalTo(self)
+                make.bottom.equalTo(self.triangleView.snp.top)
+            } else if position == .topRight {
+                make.right.equalTo(self)
                 make.bottom.equalTo(self.triangleView.snp.top)
             }
         }

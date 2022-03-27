@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     // MARK:- Actions
     
     @IBAction func addNewCandidateAction(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "com.example.hrms.NewCandidateActivity")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func applicationsButtonAction(_ sender: UIButton) {
