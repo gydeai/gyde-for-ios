@@ -17,7 +17,7 @@ public class Gyde {
     
     ///stage-app.gyde.ai:- Staging
     ///app.gyde.ai:- Prod
-    private var baseURL = "stage-app.gyde.ai"
+    private var baseURL = "app.gyde.ai"
     
     public var currentViewController: UIViewController?
     
