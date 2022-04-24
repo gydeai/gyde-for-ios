@@ -9,11 +9,6 @@ import UIKit
 import AVKit
 
 enum CallOutPosition: String {
-    case left
-    case right
-    case top
-    case bottom
-    
     case bottomCenter
     case bottomLeft
     case bottomRight
@@ -80,22 +75,6 @@ class GydeCalloutView: UIView {
             if pos == "topright" {
                 return .topRight
             }
-            
-            if pos == "left" {
-                return .left
-            }
-            
-            if pos == "right" {
-                return .right
-            }
-            
-            if pos == "bottom" {
-                return .bottom
-            }
-            
-            if pos == "top" {
-                return .top
-            }
         }
         return .bottomCenter
     }
@@ -143,56 +122,57 @@ class GydeCalloutView: UIView {
         self.triangleView.alpha = 0
         self.triangleView.backgroundColor = UIColor.clear
         self.addSubview(self.triangleView)
-        self.triangleView.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
-            if position == .bottomCenter {
-                make.centerX.equalTo(self)
-                make.top.equalTo(currFrame.midY)
-            } else if position == .bottomLeft {
-                make.left.equalTo(self).offset((calloutWidth / 2) - 10)
-                make.top.equalTo(currFrame.midY)
-            } else if position == .bottomRight {
-                make.right.equalTo(self).offset(-(calloutWidth / 2) - 10)
-                make.top.equalTo(currFrame.midY)
-            } else if position == .topLeft {
-                make.left.equalTo(self).offset(currFrame.origin.x)
-                make.top.equalTo(currFrame.origin.y)
-            } else if position == .topCenter {
-                make.centerX.equalTo(self)
-                make.top.equalTo(currFrame.midY)
-            } else if position == .topRight {
-                make.right.equalTo(self).offset(-currFrame.origin.x)
-                make.top.equalTo(currFrame.origin.y)
-            }
+        triangleView.translatesAutoresizingMaskIntoConstraints = false
+        triangleView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        triangleView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        if position == .bottomCenter {
+            triangleView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.midY).isActive = true
+        } else if position == .bottomLeft {
+            triangleView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: CGFloat((calloutWidth / 2) - 10)).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.midY).isActive = true
+        } else if position == .bottomRight {
+            let constant = CGFloat(-(calloutWidth / 2) - 10)
+            triangleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: constant).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.midY).isActive = true
+        } else if position == .topLeft {
+            triangleView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: currFrame.origin.x).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.origin.y).isActive = true
+        } else if position == .topCenter {
+            triangleView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.midY).isActive = true
+        } else if position == .topRight {
+            triangleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -currFrame.origin.x).isActive = true
+            triangleView.topAnchor.constraint(equalTo: self.topAnchor, constant: currFrame.origin.y).isActive = true
         }
     
         containerView.layer.cornerRadius = 6
         containerView.alpha = 0
         containerView.backgroundColor = UIColor.white
         containerView.dropShadow()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.containerView)
-        self.containerView.snp.makeConstraints { make in
-            make.height.equalTo(calloutHeight)
-            make.width.equalTo(calloutWidth)
-            if position == .bottomCenter {
-                make.centerX.equalTo(self)
-                make.top.equalTo(self.triangleView.snp.bottom)
-            } else if position == .bottomLeft {
-                make.left.equalTo(self)
-                make.top.equalTo(self.triangleView.snp.bottom)
-            } else if position == .bottomRight {
-                make.right.equalTo(self)
-                make.top.equalTo(self.triangleView.snp.bottom)
-            } else if position == .topLeft {
-                make.left.equalTo(self.triangleView)
-                make.bottom.equalTo(self.triangleView.snp.top)
-            } else if position == .topCenter {
-                make.centerX.equalTo(self)
-                make.bottom.equalTo(self.triangleView.snp.top)
-            } else if position == .topRight {
-                make.right.equalTo(self)
-                make.bottom.equalTo(self.triangleView.snp.top)
-            }
+        containerView.heightAnchor.constraint(equalToConstant: CGFloat(calloutHeight)).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: CGFloat(calloutWidth)).isActive = true
+        if position == .bottomCenter {
+            containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            containerView.topAnchor.constraint(equalTo: self.triangleView.bottomAnchor).isActive = true
+        } else if position == .bottomLeft {
+            containerView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+            containerView.topAnchor.constraint(equalTo: self.triangleView.bottomAnchor).isActive = true
+        } else if position == .bottomRight {
+            containerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+            containerView.topAnchor.constraint(equalTo: self.triangleView.bottomAnchor).isActive = true
+        } else if position == .topLeft {
+            containerView.leftAnchor.constraint(equalTo: self.triangleView.leftAnchor).isActive = true
+            containerView.bottomAnchor.constraint(equalTo: self.triangleView.topAnchor).isActive = true
+        } else if position == .topCenter {
+            containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            containerView.bottomAnchor.constraint(equalTo: self.triangleView.topAnchor).isActive = true
+        } else if position == .topRight {
+            containerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+            containerView.bottomAnchor.constraint(equalTo: self.triangleView.topAnchor).isActive = true
         }
         
         titleLabel.text = title
@@ -200,11 +180,10 @@ class GydeCalloutView: UIView {
         titleLabel.textColor = .systemIndigo
         titleLabel.numberOfLines = 0
         containerView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(40)
-            make.width.equalTo(containerView).multipliedBy(0.9)
-            make.left.equalTo(containerView).offset(15)
-        }
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.9).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15).isActive = true
         
         subtitleLabel.text = subtitle
         subtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 12)
@@ -212,33 +191,31 @@ class GydeCalloutView: UIView {
         subtitleLabel.adjustsFontSizeToFitWidth = true
         subtitleLabel.minimumScaleFactor = 0.5
         containerView.addSubview(subtitleLabel)
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(15)
-            make.left.equalTo(titleLabel)
-            make.width.equalTo(containerView).multipliedBy(0.9)
-        }
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15).isActive = true
+        subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
+        subtitleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.9).isActive = true
         
         closeButton.setImage(UIImage(systemName: "x.circle.fill"), for: .normal)
         closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         closeButton.tintColor = AppData.sharedInstance.headerColor ?? .systemIndigo
         containerView.addSubview(closeButton)
-        closeButton.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(10)
-            make.right.equalTo(containerView).offset(-15)
-            make.width.height.equalTo(24)
-        }
-        
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        closeButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -15).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
         audioButton.addTarget(self, action: #selector(audioAction), for: .touchUpInside)
         audioButton.tintColor = AppData.sharedInstance.headerColor ?? .systemIndigo
         audioButton.setImage(UIImage(systemName: "volume.slash.fill"), for: .normal)
         audioButton.setImage(UIImage(systemName: "volume.2.fill"), for: .selected)
         containerView.addSubview(audioButton)
-        audioButton.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(10)
-            make.right.equalTo(closeButton.snp.right).offset(-30)
-            make.width.height.equalTo(24)
-        }
+        audioButton.translatesAutoresizingMaskIntoConstraints = false
+        audioButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        audioButton.rightAnchor.constraint(equalTo: closeButton.rightAnchor, constant: -30).isActive = true
+        audioButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        audioButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
         nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         nextButton.backgroundColor = .systemIndigo
@@ -246,12 +223,11 @@ class GydeCalloutView: UIView {
         nextButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 12)
         nextButton.layer.cornerRadius = 15
         containerView.addSubview(nextButton)
-        nextButton.snp.makeConstraints { make in
-            make.bottom.equalTo(containerView).offset(-10)
-            make.centerX.equalTo(containerView)
-            make.width.equalTo(120)
-            make.height.equalTo(30)
-        }
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10).isActive = true
+        nextButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        nextButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         UIView.animate(withDuration: 0.33) {
             self.triangleView.alpha = 1

@@ -34,9 +34,11 @@ class GydeWalkthroughPromptView: UIView {
         overlayView.backgroundColor = UIColor.black
         overlayView.alpha = 0.7
         self.addSubview(overlayView)
-        overlayView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalTo(self)
-        }
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        overlayView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        overlayView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        overlayView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        overlayView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         overlayView.addGestureRecognizer(tap)
@@ -45,33 +47,30 @@ class GydeWalkthroughPromptView: UIView {
         containerView.backgroundColor = UIColor.white
         containerView.dropShadow()
         self.insertSubview(containerView, aboveSubview: overlayView)
-        containerView.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
-            make.centerY.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.8)
-            make.height.equalTo(200)
-        }
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 220).isActive = true
         
         headerLabel.font = UIFont(name: "AvenirNext-Bold", size: 18)
         headerLabel.textColor = .systemIndigo
         headerLabel.textAlignment = .center
-        headerLabel.numberOfLines = 0
+        headerLabel.numberOfLines = 2
         containerView.addSubview(headerLabel)
-        headerLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(30)
-            make.width.equalTo(containerView).multipliedBy(0.9)
-            make.centerX.equalTo(containerView)
-        }
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 25).isActive = true
+        headerLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.9).isActive = true
+        headerLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         
         headerSubtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
         headerSubtitleLabel.textAlignment = .center
-        headerSubtitleLabel.numberOfLines = 0
+        headerSubtitleLabel.numberOfLines = 3
         containerView.addSubview(headerSubtitleLabel)
-        headerSubtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(headerLabel.snp.bottom).offset(15)
-            make.centerX.equalTo(headerLabel)
-            make.width.equalTo(containerView).multipliedBy(0.9)
-        }
+        headerSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerSubtitleLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15).isActive = true
+        headerSubtitleLabel.centerXAnchor.constraint(equalTo: headerLabel.centerXAnchor).isActive = true
+        headerSubtitleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.9).isActive = true
         
         let selectButton = UIButton()
         selectButton.addTarget(self, action: #selector(selectAction), for: .touchUpInside)
@@ -81,12 +80,11 @@ class GydeWalkthroughPromptView: UIView {
         selectButton.setTitle("Start", for: .normal)
         selectButton.layer.cornerRadius = 15
         containerView.addSubview(selectButton)
-        selectButton.snp.makeConstraints { make in
-            make.bottom.equalTo(containerView).offset(-15)
-            make.centerX.equalTo(containerView)
-            make.width.equalTo(100)
-            make.height.equalTo(30)
-        }
+        selectButton.translatesAutoresizingMaskIntoConstraints = false
+        selectButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15).isActive = true
+        selectButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        selectButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        selectButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
     // MARK: Actions

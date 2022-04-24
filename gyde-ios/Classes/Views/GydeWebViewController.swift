@@ -23,20 +23,21 @@ class GydeWebViewController: UIViewController {
         
         headerView.backgroundColor = AppData.sharedInstance.headerColor
         self.view.addSubview(headerView)
-        headerView.snp.makeConstraints { make in
-            make.left.right.top.equalTo(self.view)
-            make.height.equalTo(80)
-        }
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         headerView.addSubview(headerButton)
         headerButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
         headerButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         headerButton.tintColor = AppData.sharedInstance.headerTextColor
-        headerButton.snp.makeConstraints { make in
-            make.left.equalTo(headerView).offset(10)
-            make.centerY.equalTo(headerView)
-            make.width.height.equalTo(30)
-        }
+        headerButton.translatesAutoresizingMaskIntoConstraints = false
+        headerButton.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 10).isActive = true
+        headerButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+        headerButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        headerButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         headerView.addSubview(headerTitleLabel)
         headerTitleLabel.textColor = AppData.sharedInstance.headerTextColor
@@ -44,18 +45,18 @@ class GydeWebViewController: UIViewController {
         headerTitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 18)
         headerTitleLabel.adjustsFontSizeToFitWidth = true
         headerTitleLabel.minimumScaleFactor = 0.5
-        headerTitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(headerButton.snp.right).offset(10)
-            make.right.equalTo(headerView).offset(-10)
-            make.centerY.equalTo(headerView)
-        }
+        headerTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerTitleLabel.leftAnchor.constraint(equalTo: headerButton.rightAnchor, constant: 10).isActive = true
+        headerTitleLabel.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -10).isActive = true
+        headerTitleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
 
         webView.navigationDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(webView)
-        webView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(self.view)
-            make.top.equalTo(headerView.snp.bottom)
-        }
+        webView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        webView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         
         if let encodedURL = urlString.getCleanedURL() {
             let urlRequest = URLRequest(url: encodedURL)

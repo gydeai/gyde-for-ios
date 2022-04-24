@@ -23,28 +23,28 @@ class GydeLanguageSelectorCell: UITableViewCell {
         selectedButton.layer.borderColor = UIColor.lightGray.cgColor
         selectedButton.isUserInteractionEnabled = false
         contentView.addSubview(selectedButton)
-        selectedButton.snp.makeConstraints { make in
-            make.left.equalTo(contentView).offset(25)
-            make.centerY.equalTo(contentView)
-            make.width.height.equalTo(20)
-        }
+        selectedButton.translatesAutoresizingMaskIntoConstraints = false
+        selectedButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25).isActive = true
+        selectedButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        selectedButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        selectedButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         selectedView.backgroundColor = UIColor.systemIndigo
         selectedView.alpha = 0
         selectedView.layer.cornerRadius = 5
         selectedView.isUserInteractionEnabled = false
         selectedButton.addSubview(selectedView)
-        selectedView.snp.makeConstraints { make in
-            make.center.equalTo(selectedButton)
-            make.width.height.equalTo(10)
-        }
+        selectedView.translatesAutoresizingMaskIntoConstraints = false
+        selectedView.centerXAnchor.constraint(equalTo: selectedButton.centerXAnchor).isActive = true
+        selectedView.centerYAnchor.constraint(equalTo: selectedButton.centerYAnchor).isActive = true
+        selectedView.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        selectedView.heightAnchor.constraint(equalToConstant: 10).isActive = true
         
         titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
         contentView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(selectedButton.snp.right).offset(15)
-            make.centerY.equalTo(selectedButton)
-        }
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leftAnchor.constraint(equalTo: selectedButton.rightAnchor, constant: 15).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: selectedButton.centerYAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

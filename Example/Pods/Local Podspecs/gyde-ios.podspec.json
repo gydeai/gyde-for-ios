@@ -26,10 +26,5 @@
     "gyde-ios": [
       "gyde-ios/Assets/**/*"
     ]
-  },
-  "dependencies": {
-    "SnapKit": [
-
-    ]
   }
 }

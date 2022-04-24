@@ -38,6 +38,4 @@ TODO: Add long description of the pod here.
   s.resource_bundles = {
    'gyde-ios' => ['gyde-ios/Assets/**/*']
   }
-  
-   s.dependency 'SnapKit'
 end

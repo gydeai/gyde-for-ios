@@ -24,39 +24,38 @@ class GydeCell: UITableViewCell {
         containerView.layer.cornerRadius = 4
         contentView.addSubview(containerView)
         containerView.dropShadow()
-        containerView.snp.makeConstraints { make in
-            make.left.top.equalTo(self.contentView).offset(10)
-            make.right.bottom.equalTo(self.contentView).offset(-10)
-        }
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
+        containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        containerView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
         
         titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
         titleLabel.numberOfLines = 2
         titleLabel.lineBreakMode = .byWordWrapping
         containerView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(containerView).offset(8)
-            make.top.equalTo(containerView).offset(12)
-            make.right.equalTo(containerView).offset(-8)
-        }
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
         
         detailImageView.image = UIImage(systemName: "eye")
         detailImageView.tintColor = UIColor.systemIndigo
         containerView.addSubview(detailImageView)
-        detailImageView.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(12)
-            make.width.height.equalTo(15)
-        }
+        detailImageView.translatesAutoresizingMaskIntoConstraints = false
+        detailImageView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
+        detailImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12).isActive = true
+        detailImageView.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        detailImageView.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
         subtitleLabel.text = "Guide me"
         subtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 13)
         subtitleLabel.textColor = UIColor.systemIndigo
         containerView.addSubview(subtitleLabel)
-        subtitleLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(detailImageView)
-            make.left.equalTo(detailImageView.snp.right).offset(5)
-            make.bottom.equalTo(containerView).offset(-12)
-        }
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.centerYAnchor.constraint(equalTo: detailImageView.centerYAnchor).isActive = true
+        subtitleLabel.leftAnchor.constraint(equalTo: detailImageView.rightAnchor, constant: 5).isActive = true
+        subtitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12).isActive = true
     }
     
     required init?(coder: NSCoder) {

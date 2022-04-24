@@ -160,10 +160,12 @@ extension Gyde: StepsDelegate {
                 var calloutView: GydeCalloutView?
                 calloutView = GydeCalloutView(currentFrame: view.frame, step: step)
                 calloutView?.lastStep = self.steps?.count == 1
+                calloutView?.translatesAutoresizingMaskIntoConstraints = false
                 vc.view.addSubview(calloutView!)
-                calloutView?.snp.makeConstraints { make in
-                    make.left.right.top.bottom.equalTo(vc.view)
-                }
+                calloutView?.leftAnchor.constraint(equalTo: vc.view.leftAnchor).isActive = true
+                calloutView?.rightAnchor.constraint(equalTo: vc.view.rightAnchor).isActive = true
+                calloutView?.topAnchor.constraint(equalTo: vc.view.topAnchor).isActive = true
+                calloutView?.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor).isActive = true
                 
                 // When tapped on the next button
                 calloutView?.nextCallback = {

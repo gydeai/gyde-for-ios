@@ -26,10 +26,12 @@ class GydeSDKWidgetViewController: UIViewController {
         let gydeView = GydeView()
         gydeView.delegate = self
         gydeView.contentList = list
+        gydeView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(gydeView)
-        gydeView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalTo(self.view)
-        }
+        gydeView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        gydeView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        gydeView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        gydeView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }
 

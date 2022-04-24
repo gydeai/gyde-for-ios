@@ -27,12 +27,12 @@ class AddNewCandidateViewController: UIViewController {
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.systemIndigo
+        backButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(backButton)
-        backButton.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.left.equalTo(self.view).offset(20)
-            make.top.equalTo(self.view).offset(40)
-        }
+        backButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        backButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        backButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

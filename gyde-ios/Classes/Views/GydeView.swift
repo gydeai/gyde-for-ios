@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 protocol GydeProtocol: AnyObject {
     func showWalkthrough(walkthrough: Walkthrough)
@@ -86,77 +85,79 @@ public class GydeView: UIView {
     
     private func setupViews() {
         addSubview(headerView)
-        headerView.snp.makeConstraints { make in
-            make.left.right.top.equalTo(self)
-            make.height.equalTo(80)
-        }
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        headerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        headerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         headerView.addSubview(headerTitleLabel)
+        headerTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerTitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
-        headerTitleLabel.snp.makeConstraints { make in
-            make.left.top.equalTo(headerView).offset(15)
-        }
+        headerTitleLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 15).isActive = true
+        headerTitleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 15).isActive = true
         
         headerView.addSubview(headerSubtitleLabel)
+        headerSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerSubtitleLabel.font = UIFont(name: "AvenirNext-Medium", size: 18)
-        headerSubtitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(headerTitleLabel)
-            make.top.equalTo(headerTitleLabel.snp.bottom).offset(5)
-        }
+        headerSubtitleLabel.leftAnchor.constraint(equalTo: headerTitleLabel.leftAnchor).isActive = true
+        headerSubtitleLabel.topAnchor.constraint(equalTo: headerTitleLabel.bottomAnchor, constant: 5).isActive = true
         
         headerView.addSubview(headerButton)
+        headerButton.translatesAutoresizingMaskIntoConstraints = false
         headerButton.setImage(UIImage(named: "dots", in: self.sdkBundle, compatibleWith: nil), for: .normal)
         headerButton.addTarget(self, action: #selector(headerButtonAction), for: .touchUpInside)
-        headerButton.snp.makeConstraints { make in
-            make.right.equalTo(headerView).offset(-15)
-            make.centerY.equalTo(headerSubtitleLabel)
-            make.width.height.equalTo(24)
-        }
+        headerButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -15).isActive = true
+        headerButton.centerYAnchor.constraint(equalTo: headerSubtitleLabel.centerYAnchor).isActive = true
+        headerButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        headerButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
         segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
         self.addSubview(segmentedControl)
-        segmentedControl.snp.makeConstraints { make in
-            make.left.right.equalTo(self)
-            make.top.equalTo(headerView.snp.bottom).offset(2)
-            make.height.equalTo(40)
-        }
+        segmentedControl.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        segmentedControl.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 2).isActive = true
+        segmentedControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         searchHeaderView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         searchHeaderView.layer.cornerRadius = 8
+        searchHeaderView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(searchHeaderView)
-        searchHeaderView.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(20)
-            make.top.equalTo(segmentedControl.snp.bottom).offset(20)
-            make.right.equalTo(self).offset(-20)
-            make.height.equalTo(50)
-        }
+        searchHeaderView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        searchHeaderView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20).isActive = true
+        searchHeaderView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        searchHeaderView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         let searchImageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 30, height: 30))
         searchImageView.image = UIImage(systemName: "magnifyingglass")
         searchImageView.tintColor = UIColor.darkGray
         searchHeaderView.addSubview(searchTextField)
         searchTextField.delegate = self
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
         searchTextField.leftViewMode = .always
         searchTextField.leftView = searchImageView
         searchTextField.autocapitalizationType = .none
-        searchTextField.snp.makeConstraints { make in
-            make.right.top.bottom.equalTo(searchHeaderView)
-            make.left.equalTo(searchHeaderView).offset(10)
-        }
+        searchTextField.topAnchor.constraint(equalTo: searchHeaderView.topAnchor).isActive = true
+        searchTextField.rightAnchor.constraint(equalTo: searchHeaderView.rightAnchor).isActive = true
+        searchTextField.bottomAnchor.constraint(equalTo: searchHeaderView.bottomAnchor).isActive = true
+        searchTextField.leftAnchor.constraint(equalTo: searchHeaderView.leftAnchor, constant: 10).isActive = true
         
         tableView.register(GydeCell.self, forCellReuseIdentifier: "GydeCell")
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(self)
-            make.top.equalTo(searchHeaderView.snp.bottom).offset(10)
-        }
+        tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: searchHeaderView.bottomAnchor, constant: 10).isActive = true
         
         languageSelectorButton.dropShadow()
+        languageSelectorButton.translatesAutoresizingMaskIntoConstraints = false
         languageSelectorButton.alpha = 0
         languageSelectorButton.backgroundColor = .white
         languageSelectorButton.layer.cornerRadius = 4
@@ -165,27 +166,27 @@ public class GydeView: UIView {
         languageSelectorButton.setTitle("Select Language", for: .normal)
         languageSelectorButton.addTarget(self, action: #selector(languageSelection), for: .touchUpInside)
         self.addSubview(languageSelectorButton)
-        languageSelectorButton.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(-5)
-            make.width.equalTo(180)
-            make.height.equalTo(50)
-            make.top.equalTo(headerView.snp.bottom).offset(-10)
-        }
+        languageSelectorButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
+        languageSelectorButton.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10).isActive = true
+        languageSelectorButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        languageSelectorButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         languageSelectorView.alpha = 0
+        languageSelectorView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(languageSelectorView)
-        languageSelectorView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalTo(self)
-        }
+        languageSelectorView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        languageSelectorView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        languageSelectorView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        languageSelectorView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         noContentLabel.text = "Searched content not available"
         noContentLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
         noContentLabel.textColor = UIColor.darkGray
         noContentLabel.alpha = 0
+        noContentLabel.translatesAutoresizingMaskIntoConstraints = false
         self.insertSubview(noContentLabel, aboveSubview: tableView)
-        noContentLabel.snp.makeConstraints { make in
-            make.center.equalTo(tableView)
-        }
+        noContentLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        noContentLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
         
         languageSelectorView.dismissBlock = { [unowned self] in
             noContentLabel.alpha = 0
@@ -213,42 +214,42 @@ public class GydeView: UIView {
         }
         
         walkthroughPromptView.alpha = 0
+        walkthroughPromptView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(walkthroughPromptView)
-        walkthroughPromptView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalTo(self)
-        }
+        walkthroughPromptView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        walkthroughPromptView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        walkthroughPromptView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        walkthroughPromptView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
         let poweredByLabel = UILabel()
+        poweredByLabel.translatesAutoresizingMaskIntoConstraints = false
         poweredByLabel.font = UIFont(name: "AvenirNext-Medium", size: 13)
         poweredByLabel.text = "Powered by"
         poweredByLabel.textColor = .darkText
         self.addSubview(poweredByLabel)
-        poweredByLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
-            make.bottom.equalTo(self).offset(-30)
-        }
+        poweredByLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        poweredByLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
         
         let poweredByGydeImageView = UIImageView()
+        poweredByGydeImageView.translatesAutoresizingMaskIntoConstraints = false
         poweredByGydeImageView.image = UIImage(named: "gyde-mini-logo", in: self.sdkBundle, compatibleWith: nil)
         poweredByGydeImageView.contentMode = .scaleAspectFit
         self.addSubview(poweredByGydeImageView)
-        poweredByGydeImageView.snp.makeConstraints { make in
-            make.centerY.equalTo(poweredByLabel)
-            make.right.equalTo(poweredByLabel.snp.left).offset(-2)
-            make.width.height.equalTo(30)
-        }
+        poweredByGydeImageView.centerYAnchor.constraint(equalTo: poweredByLabel.centerYAnchor).isActive = true
+        poweredByGydeImageView.rightAnchor.constraint(equalTo: poweredByLabel.leftAnchor, constant: -2).isActive = true
+        poweredByGydeImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        poweredByGydeImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         let gydeFooterLabel = UILabel()
+        gydeFooterLabel.translatesAutoresizingMaskIntoConstraints = false
         gydeFooterLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
         gydeFooterLabel.text = "Gyde"
         gydeFooterLabel.textColor = .systemIndigo
         self.addSubview(gydeFooterLabel)
-        gydeFooterLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(poweredByLabel)
-            make.left.equalTo(poweredByLabel.snp.right).offset(3)
-        }
+        gydeFooterLabel.centerYAnchor.constraint(equalTo: poweredByLabel.centerYAnchor).isActive = true
+        gydeFooterLabel.leftAnchor.constraint(equalTo: poweredByLabel.rightAnchor, constant: 3).isActive = true
     }
     
     // MARK: Actions

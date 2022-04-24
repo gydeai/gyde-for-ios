@@ -1,8 +1,6 @@
 PODS:
   - Branch (1.41.0)
-  - gyde-ios (0.1.0):
-    - SnapKit
-  - SnapKit (5.0.1)
+  - gyde-ios (0.1.0)
 
 DEPENDENCIES:
   - Branch
@@ -11,7 +9,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Branch
-    - SnapKit
 
 EXTERNAL SOURCES:
   gyde-ios:
@@ -19,8 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Branch: bd6c472d6cab03206877ac86c1241327a3f217d1
-  gyde-ios: b270bfc8e7a62a75a0bf4fd02734a544172524ea
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  gyde-ios: 0bec5b51cb624de3528ba9d17cc14b39c99b44d9
 
 PODFILE CHECKSUM: 331c512fc52e2c41fc528ca7ec09f807ae029e49
 
