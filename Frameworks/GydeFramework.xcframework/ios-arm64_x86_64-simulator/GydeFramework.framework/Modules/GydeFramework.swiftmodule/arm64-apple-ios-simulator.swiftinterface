@@ -1,0 +1,83 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GydeFramework
+import AVKit
+import Foundation
+@_exported import GydeFramework
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+public struct Steps : Swift.Encodable, Swift.Decodable {
+  public let title: Swift.String
+  public let content: Swift.String
+  public let stepDescription: Swift.Int
+  public let screenName: Swift.String
+  public let placement: Swift.String
+  public let gyClickFlag: Swift.Bool
+  public let tag: Swift.Int?
+  public let frame: Swift.String
+  public let scrollTo: Swift.String
+  public let gyDelay: Swift.String
+  public let voiceOverPath: Swift.String
+  public let voiceOverContent: Swift.String
+  public let viewId: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol GydeDelegate : AnyObject {
+  func navigate(step: GydeFramework.Steps, completion: @escaping () -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers public class Gyde {
+  public var currentViewController: UIKit.UIViewController?
+  public static let sharedInstance: GydeFramework.Gyde
+  weak public var delegate: GydeFramework.GydeDelegate?
+  public func setup(appId: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void)
+  public func startWidget(mainVC: UIKit.UIViewController)
+  public func executeButtonFlow(flowId: Swift.String)
+  @objc deinit
+}
+public enum GydeError : Swift.Error {
+  case NoList
+  public static func == (a: GydeFramework.GydeError, b: GydeFramework.GydeError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Walkthrough : Swift.Encodable, Swift.Decodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GydeView : UIKit.UIView {
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+}
+extension GydeFramework.GydeView : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+extension GydeFramework.GydeView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+public struct Flow : Swift.Encodable, Swift.Decodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ContentList : Swift.Encodable, Swift.Decodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HelpArticles : Swift.Encodable, Swift.Decodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class AppData {
+  public static let sharedInstance: GydeFramework.AppData
+  @objc deinit
+}
+extension GydeFramework.GydeError : Swift.Equatable {}
+extension GydeFramework.GydeError : Swift.Hashable {}

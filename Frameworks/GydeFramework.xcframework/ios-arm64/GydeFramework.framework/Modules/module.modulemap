@@ -1,0 +1,11 @@
+framework module GydeFramework {
+  umbrella header "GydeFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module GydeFramework.Swift {
+    header "GydeFramework-Swift.h"
+    requires objc
+}
