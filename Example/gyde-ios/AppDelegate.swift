@@ -106,12 +106,15 @@ extension AppDelegate: GydeDelegate {
     func navigate(step: Steps, completion: @escaping () -> Void) {
         DispatchQueue.main.async {
             if let topController = UIApplication.topViewController() {
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: step.screenName)
-                if type(of: topController) != type(of: vc) {
-                    Gyde.sharedInstance.currentViewController = vc
-                    topController.navigationController?.pushViewController(vc, animated: true)
+                defer {
+                    completion()
                 }
-                completion()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: step.screenName)
+                guard type(of: topController) != type(of: vc) else {
+                    return
+                }
+                Gyde.sharedInstance.currentViewController = vc
+                topController.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
